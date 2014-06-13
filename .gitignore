@@ -23,3 +23,7 @@ Thumbs.db
 prototype/dist
 prototype/docs
 prototype/node_modules
+source-1/node_modules
+source-1/bower_components
+source-2
+getting-started-guide
