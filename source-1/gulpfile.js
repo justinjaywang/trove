@@ -14,7 +14,7 @@ var changed =       require('gulp-changed');
 var gutil =         require('gulp-util');
 
 var paths = {
-  templates: ['**/*.{hbs,html}'],
+  templates: ['js/templates/*.hbs'],
   scripts:   ['js/**/*.js'],
   styles:    ['less/all.less'],
   images:    ['img/**/*']
@@ -36,7 +36,7 @@ gulp.task('clean', function () {
 gulp.task('templates', function() {
   return gulp.src(paths.templates)
     .pipe(handlebars({outputType: 'browser'}))
-    .pipe(concat('template.js'))
+    .pipe(concat('templates.js'))
     .pipe(gulp.dest(dest.templates))
     .on('error', gutil.log);
 });
@@ -84,4 +84,4 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'styles', 'images', 'watch']);
+gulp.task('default', ['templates', 'scripts', 'styles', 'images', 'watch']);

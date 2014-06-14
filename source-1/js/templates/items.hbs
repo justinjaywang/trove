@@ -1,0 +1,9 @@
+{{!-- templates/items.hbs --}}
+
+<ul class="items-list">
+  {{#each item in controller}}
+    <li>{{item.name}}</li>
+  {{else}}
+    <li>no items… :(</li>
+  {{/each}}
+</ul>
