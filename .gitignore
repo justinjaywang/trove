@@ -25,5 +25,6 @@ prototype/docs
 prototype/node_modules
 source-1/node_modules
 source-1/bower_components
-source-2
+source-1/dist
+source-2/
 getting-started-guide
