@@ -1,6 +1,18 @@
 {{!-- templates/application.hbs --}}
 
-<div class="main">
-  <h1>Hello World</h1>
+<header>
+  <h1>Trove</h1>
+  {{#link-to "items"}}Home{{/link-to}}
+  {{#link-to "about"}}About{{/link-to}}
+  {{#link-to "contact"}}Contact{{/link-to}}
+  {{#link-to "categories.bathroom"}}Bathroom{{/link-to}}
+  {{#link-to "categories.kitchen"}}Kitchen{{/link-to}}
+</header>
+
+<div class="content">
   {{outlet}}
 </div>
+
+<footer>
+
+</footer>

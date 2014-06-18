@@ -1,7 +1,8 @@
-{{!-- templates/items.hbs --}}
+{{!-- templates/category.hbs --}}
 
-<div>Number of items: {{itemsCount}}</div>
-<ul class="items-list">
+<p>category template for {{title}}</p>
+
+<ul class="categories-list">
   {{#each item in controller}}
     <li>
       {{#link-to "item" item}}
