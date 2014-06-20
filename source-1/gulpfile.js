@@ -14,7 +14,7 @@ var changed =       require('gulp-changed');
 var gutil =         require('gulp-util');
 
 var paths = {
-  templates: ['js/templates/*.hbs'],
+  templates: ['js/templates/**/*.hbs'],
   scripts:   ['js/**/*.js'],
   styles:    ['less/all.less'],
   images:    ['img/**/*']

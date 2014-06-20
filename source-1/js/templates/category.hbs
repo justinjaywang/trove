@@ -1,14 +1,10 @@
 {{!-- templates/category.hbs --}}
 
-<p>category template for {{title}}</p>
+<h1>Category template for {{title}}</h1>
 
-<ul class="categories-list">
+<ul class="item-element-list">
   {{#each item in controller}}
-    <li>
-      {{#link-to "item" item}}
-        {{item.name}}
-      {{/link-to}}
-    </li>
+    {{item-element item=item}}
   {{else}}
     <li>no items… :(</li>
   {{/each}}

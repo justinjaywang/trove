@@ -6,4 +6,5 @@ App.AboutController = Ember.ArrayController.extend({
   // itemsCount: function() {
   //   return this.get('model.length');
   // }.property('@each')
+  title: 'About'
 });

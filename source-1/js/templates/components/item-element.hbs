@@ -1,0 +1,10 @@
+{{!-- templates/components/item-element.hbs --}}
+
+<li>
+  {{#with item}}
+    {{#link-to "item" item}}
+      <img {{bind-attr src=thumbnailUrl}}>
+      {{name}}
+    {{/link-to}}
+  {{/with}}
+</li>

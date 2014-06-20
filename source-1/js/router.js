@@ -1,7 +1,9 @@
 // router.js
 
 App.Router.map(function(){
+  // all items, for now
   this.resource('items', { path: '/' });
+  // item detail
   this.resource('item', { path: '/items/:item_id' });
   // categories
   this.resource('categories', { path: '/categories' }, function () {
@@ -13,7 +15,6 @@ App.Router.map(function(){
   this.resource('contact', { path: '/contact' });
   this.resource('terms', { path: '/terms' });
   this.resource('privacy', { path: '/privacy' });
-  
 
   //   this.resource('item', { path:'/:item_id' }, function(){
   //     this.route('edit');
