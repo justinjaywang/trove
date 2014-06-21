@@ -1,12 +1,12 @@
 {{!-- templates/items.hbs --}}
 
 <div class="container">
-  <h2>Items: {{itemsCount}}</h2>
+  <h5>{{itemsCount}} items</h5>
   <ul class="item-element-list">
     {{#each item in controller}}
       {{item-element item=item}}
     {{else}}
-      <li>no items… :(</li>
+      <li class="item-element-empty">No items &#9785;</li>
     {{/each}}
   </ul>
 </div>
