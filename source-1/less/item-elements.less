@@ -14,6 +14,12 @@
   font-size: @font-size-base;
   padding: (@gutter-width / 2);
   vertical-align: top;
+  a {
+    color: @item-element-color;
+    &:hover {
+      color: @item-element-hover-color;
+    }
+  }
 }
 
 .item-element-image {
@@ -22,6 +28,7 @@
 }
 
 .item-element-detail {
+  font-weight: 600;
 }
 
 .ember-view {

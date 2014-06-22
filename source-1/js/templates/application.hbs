@@ -1,10 +1,9 @@
 {{!-- templates/application.hbs --}}
 
-<header>
+<nav>
   <div class="container">
     {{#link-to "items" classNames=""}}
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    width="92px" height="21px" viewBox="0 0 92 21" enable-background="new 0 0 92 21" xml:space="preserve">
+      <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="92px" height="21px" viewBox="0 0 92 21" enable-background="new 0 0 92 21" xml:space="preserve">
         <g>
           <path d="M42.672,0.38c-6.962,0-10.306,5.48-10.306,10.132v0.035c0,4.687,3.344,10.167,10.306,10.167
             c6.962,0,10.305-5.48,10.305-10.167S49.634,0.38,42.672,0.38z M42.672,15.923c-2.765,0-5.107-2.266-5.107-5.338v-0.038
@@ -21,28 +20,23 @@
         </g>
       </svg>
     {{/link-to}}
-    <nav>
-      <ul>
+    <div>
+      <ul class="nav-list">
         <li>{{#link-to "categories.bathroom" activeClass="selected"}}Bathroom{{/link-to}}</li>
         <li>{{#link-to "categories.kitchen" activeClass="selected"}}Kitchen{{/link-to}}</li>
       </ul>
-    </nav>
-
+    </div>
+    <div>
+      <ul class="nav-list">
+        <li>{{#link-to "about"}}About{{/link-to}}</li>
+        <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
+        <li>{{#link-to "terms"}}Terms{{/link-to}}</li>
+        <li>{{#link-to "privacy"}}Privacy{{/link-to}}</li>
+      </ul>
+    </div>
   </div>
-  
-</header>
+</nav>
 
 <div class="content">
   {{outlet}}
 </div>
-
-<footer>
-  <div class="container">
-    <ul>
-      <li>{{#link-to "about"}}About{{/link-to}}</li>
-      <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
-      <li>{{#link-to "terms"}}Terms{{/link-to}}</li>
-      <li>{{#link-to "privacy"}}Privacy{{/link-to}}</li>
-    </ul>
-  </div>
-</footer>
