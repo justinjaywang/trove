@@ -1,7 +1,9 @@
 {{!-- templates/items.hbs --}}
 
+{{cover-component}}
+
 <div class="container">
-  <h5>{{itemsCount}} items</h5>
+  {{!-- <h5>{{itemsCount}} items</h5> --}}
   <ul class="item-element-list">
     {{#each item in controller}}
       {{item-element item=item}}

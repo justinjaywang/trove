@@ -1,5 +1,5 @@
 // controllers/contactController.js
 
-App.AboutController = Ember.ArrayController.extend({
+App.ContactController = Ember.ArrayController.extend({
   title: 'Contact'
 });

@@ -2,22 +2,26 @@
 
 // colors
 
-@gray-darker:            lighten(#000, 13.5%); // #222
-@gray-dark:              lighten(#000, 20%);   // #333
-@gray:                   lighten(#000, 33.5%); // #555
-@gray-light:             lighten(#000, 60%);   // #999
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+// @gray-darker:            lighten(#000, 13.5%); // #222
+// @gray-dark:              lighten(#000, 20%);   // #333
+// @gray:                   lighten(#000, 33.5%); // #555
+// @gray-light:             lighten(#000, 60%);   // #999
+// @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:          #415bf6;
+@gray-dark:              #222; // TEMP
+@gray:                   #777; 
+
+// @brand-primary:          #415bf6;
+@brand-primary:          #3C72D6;
 
 
 // scaffolding
 
-@body-bg:               #fff;
-@text-color:            @gray;
+@body-bg:               #f3f3f3; // TEMP
+@text-color:            @gray-dark;
 
 @link-color:            @brand-primary;
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      #fff; // darken(@link-color, 15%); // TEMP
 
 
 // typography
@@ -71,6 +75,7 @@
 
 @gutter-width:              24px;
 @container-width:           92vw;
+@container-width-desktop:   92vw;
 
 
 // item elements
@@ -95,10 +100,10 @@
 @screen-3-max:  unit(((unit(@item-element-max-width + @gutter-width) * 3) / (unit(@container-width) / 100)), px);
 
 @screen-4-min:  (@screen-3-max + 1);
-@screen-4-max:  unit(((unit(@item-element-max-width + @gutter-width) * 4) / (unit(@container-width) / 100)), px);
+@screen-4-max:  unit(((unit(@item-element-max-width + @gutter-width) * 4) / (unit(@container-width-desktop) / 100)), px);
 
 @screen-5-min:  (@screen-4-max + 1);
-@screen-5-max:  unit(((unit(@item-element-max-width + @gutter-width) * 5) / (unit(@container-width) / 100)), px);
+@screen-5-max:  unit(((unit(@item-element-max-width + @gutter-width) * 5) / (unit(@container-width-desktop) / 100)), px);
 
 
 // z-indexes

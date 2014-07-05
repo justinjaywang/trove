@@ -38,6 +38,9 @@ gulp.task('templates', function() {
     .pipe(handlebars({outputType: 'browser'}))
     .pipe(concat('templates.js'))
     .pipe(gulp.dest(dest.templates))
+    .pipe(uglify())
+    .pipe(rename({extname: '.min.js'}))
+    .pipe(gulp.dest(dest.templates))
     .on('error', gutil.log);
 });
 
