@@ -1,9 +1,10 @@
-{{!-- templates/components/cover-component.hbs --}}
+{{!-- templates/components/page-cover.hbs --}}
 
 <div class="cover">
   <div class="cover-image"></div>
   <header class="header">
     <div class="header-banner">
+      <button {{action "openNav"}}>Menu</button>
       {{#link-to "items" classNames=""}}
         <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="92px" height="21px" viewBox="0 0 92 21" enable-background="new 0 0 92 21" xml:space="preserve">
           <g>
@@ -22,11 +23,16 @@
           </g>
         </svg>
       {{/link-to}}
+      <button {{action "otherAction"}}>Another button</button>
     </div>
   </header>
   <div class="container">
     <div class="cover-title">
-      <h1>Cover title</h1>
+      <h1>{{title}}</h1>
     </div>
   </div>
 </div>
+
+{{#if coverImage}}
+<h3>has cover image</h3>
+{{/if}}

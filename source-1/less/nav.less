@@ -3,6 +3,20 @@
 .nav {
   // padding: 1rem 0;
   background: @gray-dark; // TEMP
+  width: @nav-width;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+}
+.is-nav-open {
+  .nav {
+    position: fixed;
+    z-index: auto;
+    display: block;
+  }
 }
 .nav-lists {
   // margin-top: 1em;

@@ -10,4 +10,10 @@ App.ApplicationController = Ember.Controller.extend({
 //     //     break;
 //     // }
 //   }.observes('currentPath')
+  // actions: {
+  //   openNav: function () {
+  //     alert('open nav called');
+  //   }
+  // }
+  isNavOpen: false
 });
