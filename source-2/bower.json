@@ -1,0 +1,11 @@
+{
+  "name": "trove",
+  "description": "Curated 3D design marketplace.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinjaywang/elsa.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

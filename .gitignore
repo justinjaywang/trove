@@ -26,5 +26,8 @@ prototype/node_modules
 source-1/node_modules
 source-1/bower_components
 source-1/dist
-source-2/
-getting-started-guide
+source-2/node_modules
+source-2/bower_components
+source-2/build
+getting-started-guide/
+react-tutorial/
