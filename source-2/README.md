@@ -4,5 +4,7 @@
 
 ## Tasks
 
-- Get hello world in Node
-- Get set up in Ember
+- Get set up with routes and stuff
+- Navbar
+- Sample data and item element components
+- Styles

@@ -37,7 +37,7 @@ gulp.task('templates', function() {
   return gulp.src(paths.templates)
     // .pipe(handlebars({outputType: 'browser'}))
     // .pipe(concat('templates.js'))
-    .pipe(concat('templates.js'))
+    .pipe(concat('templates.jsx'))
     .pipe(react())
     .pipe(gulp.dest(dest.templates))
     .pipe(uglify())
