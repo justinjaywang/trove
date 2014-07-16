@@ -14,7 +14,6 @@ var troveApp = angular.module('troveApp', [
 troveApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-
     $routeProvider.
       when('/', {
         templateUrl: '/partials/items.html',
@@ -31,5 +30,4 @@ troveApp.config(['$routeProvider', '$locationProvider',
       otherwise({
         redirectTo: '/'
       });
-    // $locationProvider.html5Mode(true);
   }]);

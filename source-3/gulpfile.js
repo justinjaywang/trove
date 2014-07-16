@@ -2,6 +2,7 @@ var gulp =          require('gulp');
 var clean =         require('gulp-clean');
 var watch =         require('gulp-watch');
 var htmlmin =       require('gulp-htmlmin');
+var htmlify =       require('gulp-angular-htmlify');
 var concat =        require('gulp-concat');
 var uglify =        require('gulp-uglify');
 var less =          require('gulp-less');
@@ -49,6 +50,7 @@ gulp.task('clean', function () {
 // Minify HTML templates
 gulp.task('templates', function() {
   return gulp.src(paths.templates)
+    .pipe(htmlify())
     .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
     .pipe(gulp.dest(dest.templates))
     .on('error', util.log);
