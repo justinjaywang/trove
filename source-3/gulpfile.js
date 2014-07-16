@@ -17,16 +17,18 @@ var paths = {
   templates: ['source/**/*.html'],
   scripts:   ['source/js/**/*.js'],
   styles:    ['source/less/all.less'],
-  images:    ['source/img/**/*']
+  images:    ['source/img/**/*'],
+  data:      ['source/data/**/*.json']
 };
 
 var dest = {
   build:  'build'
 };
+dest.templates =  dest.build;
 dest.scripts =    dest.build + '/js';
 dest.styles =     dest.build + '/css';
 dest.images =     dest.build + '/img';
-dest.templates =  dest.build;
+dest.data =       dest.build + '/data';
 
 gulp.task('clean', function () {  
   return gulp.src(dest.build, {read: false})
@@ -85,6 +87,13 @@ gulp.task('images', function() {
     .pipe(gulp.dest(dest.images))
     .on('error', util.log);
 });
+
+// Copy over sample data
+gulp.task('data', function() {
+ return gulp.src(paths.data)
+    .pipe(gulp.dest(dest.data))
+    .on('error', util.log);
+});
   
 // Rerun the task when a file changes
 gulp.task('watch', function() {
@@ -92,7 +101,8 @@ gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(['less/**/*.less'], ['styles']);
   gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.data, ['data']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['templates', 'scripts', 'styles', 'images', 'watch']);
+gulp.task('default', ['templates', 'scripts', 'styles', 'images', 'data', 'watch']);

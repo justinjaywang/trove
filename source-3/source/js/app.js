@@ -13,17 +13,19 @@ var troveApp = angular.module('troveApp', [
 
 troveApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
     $routeProvider.
       when('/', {
-        templateUrl: 'partials/items.html',
+        templateUrl: '/partials/items.html',
         controller: 'ItemsCtrl'
       }).
       when('/item/:itemId', {
-        templateUrl: 'partials/item.html',
+        templateUrl: '/partials/item.html',
         controller: 'ItemCtrl'
       }).
       when('/about', {
-        templateUrl: 'partials/about.html',
+        templateUrl: '/partials/about.html',
         controller: 'AboutCtrl'
       }).
       otherwise({

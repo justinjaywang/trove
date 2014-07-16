@@ -26,6 +26,6 @@
     "http-server": "^0.6.1"
   },
   "scripts": {
-    "start": "http-server -p 8001"
+    "start": "http-server build -p 8001"
   }
 }
