@@ -29,5 +29,7 @@ source-1/dist
 source-2/node_modules
 source-2/bower_components
 source-2/build
+source-3/build
+source-3/node_modules
 getting-started-guide/
 react-tutorial/

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>this is items.html</h1>
+  <h5>Number of items: 2</h5>
+  <div class="container">
+    <ul class="item-element-list">
+      <li class="item-element" ng-repeat="item in items">
+        <a href="#/item/{{item.id}}">
+          <img ng-src="{{item.thumbnailUrl}}" />
+          <div class="item-element-label">{{item.name}}</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

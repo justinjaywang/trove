@@ -1,0 +1,61 @@
+// scaffolding.less
+
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+
+// body reset
+
+html {
+  font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @font-family-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+  .font-smoothing(antialiased);
+  // text-rendering: optimizeLegibility;
+}
+
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// links
+
+a {
+  color: @link-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    // text-decoration: underline;
+  }
+  // &:focus {
+  //   .tab-focus();
+  // }
+}
+
+
+// images
+
+img {
+  vertical-align: middle;
+}
