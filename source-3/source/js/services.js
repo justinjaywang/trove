@@ -5,7 +5,7 @@
 var troveServices = angular.module('troveServices', ['ngResource']);
 
 troveServices.factory('Item', ['$resource',
-  function($resource){
+  function($resource) {
     var Item = $resource('/data/:id.json', {}, {
       query: { method: 'GET', params: {id: 'items'}, isArray: true }
     });
@@ -17,4 +17,13 @@ troveServices.factory('Item', ['$resource',
     // );
     // return Song;
     return Item;
+  }]);
+
+troveServices.factory('Page', [
+  function() {
+    var title = 'Trove';
+    return {
+      title: function() { return title; },
+      setTitle: function(newTitle) { title = newTitle; }
+    }
   }]);

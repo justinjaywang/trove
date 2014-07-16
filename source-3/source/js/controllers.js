@@ -4,23 +4,29 @@
 
 var troveControllers = angular.module('troveControllers', []);
 
-troveControllers.controller('ItemsCtrl', ['$scope', 'Item',
-  function($scope, Item) {
-    $scope.items = Item.query();
-    $scope.orderProp = 'id';
+troveControllers.controller('TitleCtrl', ['$scope', 'Page',
+  function($scope, Page) {
+    $scope.Page = Page;
   }]);
 
-troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Item',
-  function($scope, $routeParams, Item) {
+troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item',
+  function($scope, Page, Item) {
+    $scope.items = Item.query();
+    $scope.orderProp = 'id';
+    Page.setTitle('Trove / Featured');
+  }]);
+
+troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
+  function($scope, $routeParams, Page, Item) {
     $scope.item = Item.get({id: $routeParams.itemId}, function(item) {
       $scope.item = item;
+      Page.setTitle(item.name + ' on Trove');
     }, function(err) {
       $scope.errorId = $routeParams.itemId;
     });
-    // console.log(Item.get())
   }]);
 
-troveControllers.controller('AboutCtrl', ['$scope', 'Item',
-  function($scope, Item) {
-    
+troveControllers.controller('AboutCtrl', ['$scope', 'Page', 'Item',
+  function($scope, Page, Item) {
+    Page.setTitle('Trove / About');
   }]);
