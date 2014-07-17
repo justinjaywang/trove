@@ -4,18 +4,19 @@
 
 var troveServices = angular.module('troveServices', ['ngResource']);
 
+var databaseUrl = 'https://api.mongolab.com/api/1/databases/elsa-sample/collections'
+var apiKey = 'YcBYH6S0D8qjtOlMj9KIua5LQDmI_S8D';
+
 troveServices.factory('Item', ['$resource',
   function($resource) {
-    var Item = $resource('/data/:id.json', {}, {
-      query: { method: 'GET', params: {id: 'items'}, isArray: true }
-    });
-    // var Song = $resource('https://api.mongolab.com/api/1/databases' +
-    //   '/lyrics/collections/lyrics/:id',
-    //   { apiKey: 'JVmmdZYza2puepYKIJWfgvgYAzP8nAZm' }, {
-    //     update: { method: 'PUT' }
-    //   }
-    // );
-    // return Song;
+    // var Item = $resource('/data/:id.json', {}, {
+    //   query: { method: 'GET', params: {id: 'items'}, isArray: true }
+    // });
+    var Item = $resource(databaseUrl + '/items/:id',
+      { apiKey: apiKey }, {
+        update: { method: 'PUT' }
+      }
+    );
     return Item;
   }]);
 

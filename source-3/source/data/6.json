@@ -6,5 +6,5 @@
   "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/x81EIqCRiUCiu-tYj8dwb7q8GfE=/646x646/d1g145x70srn7h.cloudfront.net/files/689b7d084994d926e976de01b78182d604161717/original.jpeg",
   "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/4ITMKiWTvXiV5XKp5HkZrFt_2hw=/276x276/d1g145x70srn7h.cloudfront.net/files/689b7d084994d926e976de01b78182d604161717/original.jpeg",
   "category": "kitchen",
-  "tags": "kitchen"
+  "tags": [ "kitchen" ]
 }

@@ -7,7 +7,7 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/4E5myXpNw-OOT612Cb_-5li0yGY=/646x646/square-production.s3.amazonaws.com/files/4a0ed97bdac41de399eec32897ac92b09995e912/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/Tw4THa_fLvcHqmKX-TlKA2R8ecw=/276x276/square-production.s3.amazonaws.com/files/4a0ed97bdac41de399eec32897ac92b09995e912/original.jpeg",
     "category": "bathroom",
-    "tags": "bathroom;minimal"
+    "tags": [ "bathroom", "minimal" ]
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/DliM4ibNe6VEzPdp55XOhv_hwjo=/646x646/square-production.s3.amazonaws.com/files/26a152a00db1ec37c15efbbcd023e65d9298d750/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/7SaMeVKLxZ2NLiAf2DnUCXbZEIg=/276x276/square-production.s3.amazonaws.com/files/26a152a00db1ec37c15efbbcd023e65d9298d750/original.jpeg",
     "category": "kitchen",
-    "tags": "kitchen"
+    "tags": [ "kitchen" ]
   },
   {
     "id": "3",
@@ -27,7 +27,7 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/zKq0GifrnikazdjMY6WRaTsLE8I=/646x646/square-production.s3.amazonaws.com/files/c6c9e11b68ff83d66b5c3b3f0b31677ac6dabaee/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/cw2XwqHm0H-89p5WDO96gTgalWo=/276x276/square-production.s3.amazonaws.com/files/c6c9e11b68ff83d66b5c3b3f0b31677ac6dabaee/original.jpeg",
     "category": "bathroom",
-    "tags": "bathroom"
+    "tags": [ "bathroom" ]
   },
   {
     "id": "4",
@@ -37,7 +37,7 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/2ExBBBVA5QNDHktcLWmX_nRtmSI=/646x646/d1g145x70srn7h.cloudfront.net/files/4fdc04bd97aa87ada60b2b265b993d1d723df3aa/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/V6NEm8yunHwYUjeKXyDv4uXlgbM=/276x276/d1g145x70srn7h.cloudfront.net/files/4fdc04bd97aa87ada60b2b265b993d1d723df3aa/original.jpeg",
     "category": "kitchen",
-    "tags": "kitchen"
+    "tags": [ "kitchen" ]
   },
   {
     "id": "5",
@@ -47,7 +47,7 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/rpN8DIWfEJbmScr1yWT_dzznoC8=/646x646/d1g145x70srn7h.cloudfront.net/files/af3e4f22b39f7a8c82fb0b5312790032be95f0d0/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/Y6pBg8qMJO9Zsp_kLrG8BvIuino=/276x276/d1g145x70srn7h.cloudfront.net/files/af3e4f22b39f7a8c82fb0b5312790032be95f0d0/original.jpeg",
     "category": "kitchen",
-    "tags": "kitchen;plateware"
+    "tags": [ "kitchen", "plateware" ]
   },
   {
     "id": "6",
@@ -57,6 +57,6 @@
     "imageUrl": "https://d2isyty7gbnm74.cloudfront.net/x81EIqCRiUCiu-tYj8dwb7q8GfE=/646x646/d1g145x70srn7h.cloudfront.net/files/689b7d084994d926e976de01b78182d604161717/original.jpeg",
     "thumbnailUrl": "https://d2isyty7gbnm74.cloudfront.net/4ITMKiWTvXiV5XKp5HkZrFt_2hw=/276x276/d1g145x70srn7h.cloudfront.net/files/689b7d084994d926e976de01b78182d604161717/original.jpeg",
     "category": "kitchen",
-    "tags": "kitchen"
+    "tags": [ "kitchen" ]
   }
 ]

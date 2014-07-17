@@ -7,8 +7,8 @@
   <div class="container">
     <ul class="item-element-list">
       <li class="item-element" ng-repeat="item in items">
-        <a href="/item/{{item.id}}">
-          <img ng-src="{{item.thumbnailUrl}}" />
+        <a href="/item/{{item._id.$oid}}">
+          <img ng-src="{{item.image_url}}" />
           <div class="item-element-label">{{item.name}}</div>
         </a>
       </li>
