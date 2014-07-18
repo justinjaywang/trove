@@ -1,6 +1,6 @@
-<ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="(headerStyle)"></ng-include>
+<ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="headerStyle"></ng-include>
 
-<ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-init="init((coverTitle), (coverImageUrl))"></ng-include>
+<ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl"></ng-include>
 
 <div class="container">
   <h5>Number of items: {{items.length}}</h5>

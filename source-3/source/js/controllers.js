@@ -11,10 +11,14 @@ var troveControllers = angular.module('troveControllers', []);
 troveControllers.controller('TitleCtrl', ['$scope', 'Page',
   function($scope, Page) {
     $scope.Page = Page;
+    // defaults
+    $scope.coverTitle = ''
+    $scope.coverImageUrl = 'http://dummyimage.com/1x1/000/';
   }]);
 
-troveControllers.controller('NavCtrl', ['$scope',
-  function($scope) {
+troveControllers.controller('NavCtrl', ['$scope', 'Category',
+  function($scope, Category) {
+    $scope.categories = Category.query();
   }]);
 
 troveControllers.controller('HeaderCtrl', ['$scope',
@@ -23,16 +27,18 @@ troveControllers.controller('HeaderCtrl', ['$scope',
 
 troveControllers.controller('CoverCtrl', ['$scope',
   function($scope) {
-    $scope.init = function(coverTitle, coverImageUrl) {
-      // set parameters if defined, otherwise default
-      $scope.coverTitle = typeof coverTitle !== 'undefined' ? coverTitle : '';
-      $scope.coverImageUrl = typeof coverImageUrl !== 'undefined' ? coverImageUrl : '';
-    };
+    // $scope.coverTitle;
+    // $scope.init = function(coverTitle, coverImageUrl) {
+    //   // set parameters if defined, otherwise default
+    //   $scope.coverTitle = typeof coverTitle !== 'undefined' ? coverTitle : '';
+    //   $scope.coverImageUrl = typeof coverImageUrl !== 'undefined' ? coverImageUrl : '';
+    // };
   }]);
 
-troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item',
-  function($scope, Page, Item) {
+troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
+  function($scope, Page, Item, Category) {
     $scope.items = Item.query();
+    $scope.categories = Category.query();
     $scope.orderProp = '_id';
     Page.setTitle('Trove / Featured'); // TEMP
     $scope.coverTitle = 'Featured Items';
@@ -51,12 +57,17 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
     $scope.headerStyle = 'dark';
   }]);
 
-troveControllers.controller('CategoryCtrl', ['$scope', 'Page', 'Item',
-  function($scope, Page, Item) {
-    Page.setTitle('Trove / Category'); // TEMP
-    $scope.coverTitle = 'Category Name';
-    $scope.coverImageUrl = 'http://placehold.it/1680x600';
+troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', 'Page', 'Item', 'Category',
+  function($scope, $routeParams, Page, Item, Category) {
+    $scope.category = Category.get({id: $routeParams.categoryId}, function(category) {
+      $scope.category = category;
+      Page.setTitle('Trove / ' + category._id); // TEMP
+      $scope.coverTitle = category._id;
+      $scope.coverImageUrl = category.cover_image_url;
+    });
     $scope.headerStyle = 'light';
+    // $scope.coverTitle = 'Test';
+    // $scope.coverImageUrl = 'TestUrl';
   }]);
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',

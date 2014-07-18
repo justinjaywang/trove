@@ -23,6 +23,10 @@ troveApp.config(['$routeProvider', '$locationProvider',
         templateUrl: '/partials/item.html',
         controller: 'ItemCtrl'
       }).
+      when('/category/:categoryId', {
+        templateUrl: '/partials/category.html',
+        controller: 'CategoryCtrl'
+      }).
       when('/about', {
         templateUrl: '/partials/about.html',
         controller: 'AboutCtrl'
