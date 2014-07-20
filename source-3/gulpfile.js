@@ -71,7 +71,7 @@ gulp.task('scripts', function() {
 // Compile Less, autoprefix, and minify the resulting CSS
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
-    .pipe(changed(dest.styles)) // exclude unmodified files
+    // .pipe(changed(dest.styles)) // exclude unmodified files
     .pipe(less())
     .pipe(autoprefixer())
     .pipe(gulp.dest(dest.styles))
@@ -101,7 +101,7 @@ gulp.task('images', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(['less/**/*.less'], ['styles']);
+  gulp.watch(['source/less/**/*.less'], ['styles']);
   gulp.watch(paths.images, ['images']);
   // gulp.watch(paths.data, ['data']);
 });

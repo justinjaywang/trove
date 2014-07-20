@@ -2,16 +2,9 @@
 
 <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl"></ng-include>
 
-<div class="container">
+<div class="grid-container">
   <h5>Number of items: {{items.length}}</h5>
-  <div class="container">
-    <ul class="item-element-list">
-      <li class="item-element" ng-repeat="item in items">
-        <a href="/item/{{item._id.$oid}}">
-          <img ng-src="{{item.image_url}}" />
-          <div class="item-element-label">{{item.name}}</div>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <ul class="item-element-list">
+    <ng-include src="'/partials/item-element.html'" ng-repeat="item in items" /></ng-include>
+  </ul>
 </div>
