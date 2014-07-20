@@ -23,6 +23,7 @@ troveServices.factory('Item', ['$resource',
     // });
     var Item = $resource(databaseUrl + '/items/:id',
       { apiKey: apiKey }, {
+        // getCategoryItems: { method: 'GET', isArray: true }, 
         update: { method: 'PUT' }
       }
     );
