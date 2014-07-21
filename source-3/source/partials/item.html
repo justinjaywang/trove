@@ -1,7 +1,9 @@
 <ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="headerStyle"></ng-include>
 
-<div class="grid-container">
-  <img ng-src="{{item.image_url}}" />
-  <h1>{{item.name}}</h1>
-  <p>{{item.description}}</p>
-</div>
+<main class="main-content">
+  <div class="grid-container">
+    <img ng-src="{{item.image_url}}" />
+    <h1>{{item.name}}</h1>
+    <p>{{item.description}}</p>
+  </div>
+</main>

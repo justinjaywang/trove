@@ -1,0 +1,38 @@
+// header.less
+
+.header {
+  position: absolute;
+  z-index: @z-index-header;
+  text-align: center;
+  background: rgba(0,0,0,.15); // TEMP
+  width: @container-width;
+  left: unit(((100 - unit(@container-width))/2), %);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-button {
+  position: absolute;
+}
+
+.menu-button {
+  left: (@gutter-width / 2);
+}
+
+.search-button {
+  right: (@gutter-width / 2);
+}
+
+@media (min-width: @screen-4-min) {
+  // snap to full-width header
+  .header {
+    width: 100%;
+    left: 0;
+  }
+  .menu-button {
+    left: 1.4em; // TO DO: variable-ize
+  }
+  .search-button {
+    right: 1.4em;
+  }
+}

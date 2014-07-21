@@ -1,9 +1,9 @@
-<nav>
+<nav class="nav nav-lists">
   <ul class="nav-list">
-    <li class="nav-list-item"><a href="/">Home</a></li>
+    <li class="nav-list-item"><a class="nav-list-link" href="/">Home</a></li>
     <li class="nav-list-item" ng-repeat="category in categories">
-      <a href="/category/{{category._id}}">{{category.display_name}}</a>
+      <a class="nav-list-link" href="/category/{{category._id}}">{{category.display_name}}</a>
     </li>
-    <li class="nav-list-item"><a href="/about">About</a></li>
+    <li class="nav-list-item"><a class="nav-list-link" href="/about">About</a></li>
   </ul>
 </nav>

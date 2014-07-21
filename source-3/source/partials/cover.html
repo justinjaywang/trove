@@ -1,5 +1,9 @@
-<div class="cover">
+<div class="cover" ng-class="{imageless: coverImageUrl == ''}">
   <div class="cover-image" style="background-image: url('{{coverImageUrl}}')"></div>
-  <h1 class="cover-title">{{coverTitle}}</h1>
-  <p>{{coverImageUrl}}</p>
+    <div class="cover-text">
+      <div class="grid-container">
+        <h1 class="cover-title">{{coverTitle}}</h1>
+      </div>
+    </div>
+  </div>
 </div>

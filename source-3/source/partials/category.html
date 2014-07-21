@@ -2,9 +2,11 @@
 
 <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl"></ng-include>
 
-<div class="grid-container">
-  <h5>Number of items: {{categoryItems.length}}</h5>
-  <ul class="item-element-list">
-    <ng-include src="'/partials/item-element.html'" ng-repeat="item in categoryItems" /></ng-include>
-  </ul>
-</div>
+<main class="main-content">
+  <div class="grid-container">
+    <h5>Number of items: {{categoryItems.length}}</h5>
+    <ul class="item-element-list">
+      <ng-include src="'/partials/item-element.html'" ng-repeat="item in categoryItems" /></ng-include>
+    </ul>
+  </div>
+</main>

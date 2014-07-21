@@ -42,7 +42,7 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     $scope.orderProp = '_id';
     Page.setTitle('Trove / Featured'); // TEMP
     $scope.coverTitle = 'Featured Items';
-    $scope.coverImageUrl = 'http://placehold.it/1280x600';
+    $scope.coverImageUrl = '';
     $scope.headerStyle = 'light';
   }]);
 
@@ -75,5 +75,6 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
   function($scope, Page) {
     Page.setTitle('Trove / About'); // TEMP
     $scope.coverTitle = 'About';
+    $scope.coverImageUrl = '';
     $scope.headerStyle = 'dark';
   }]);

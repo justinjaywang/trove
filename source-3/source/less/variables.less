@@ -74,9 +74,10 @@
 
 // grid
 
-@gutter-width:              24px;
-@container-width:           92vw;
-@container-width-desktop:   92vw;
+@gutter-width:              20px;
+@container-width:           96%;
+@container-width-lg:        96%;
+@container-max-width-lg:    1180px;
 
 
 // nav
@@ -86,7 +87,7 @@
 
 // item elements
 
-@item-element-max-width:    320px;
+@item-element-max-width:    300px;
 @item-element-image-bottom: 0.3rem;
 
 @item-element-color:        @text-color;
@@ -97,21 +98,22 @@
 
 // @screen-4-max:  unit(((unit(@item-element-max-width) * 4) / (1 - ((100 - unit(@container-width)) + (unit(@gutter-width) * 4)) / 100)), px);
 
-@screen-1-max:  unit(((unit(@item-element-max-width + @gutter-width) * 1) / (unit(@container-width) / 100)), px);
+@screen-1-max:  unit(floor((unit(@item-element-max-width + @gutter-width) * 1) / (unit(@container-width) / 100)), px);
 
 @screen-2-min:  (@screen-1-max + 1);
-@screen-2-max:  unit(((unit(@item-element-max-width + @gutter-width) * 2) / (unit(@container-width) / 100)), px);
+@screen-2-max:  unit(floor((unit(@item-element-max-width + @gutter-width) * 2) / (unit(@container-width) / 100)), px);
 
 @screen-3-min:  (@screen-2-max + 1);
-@screen-3-max:  unit(((unit(@item-element-max-width + @gutter-width) * 3) / (unit(@container-width) / 100)), px);
+@screen-3-max:  unit(floor((unit(@item-element-max-width + @gutter-width) * 3) / (unit(@container-width) / 100)), px);
 
 @screen-4-min:  (@screen-3-max + 1);
-@screen-4-max:  unit(((unit(@item-element-max-width + @gutter-width) * 4) / (unit(@container-width-desktop) / 100)), px);
+@screen-4-max:  unit(floor((unit(@item-element-max-width + @gutter-width) * 4) / (unit(@container-width-lg) / 100)), px);
 
-@screen-5-min:  (@screen-4-max + 1);
-@screen-5-max:  unit(((unit(@item-element-max-width + @gutter-width) * 5) / (unit(@container-width-desktop) / 100)), px);
+// @screen-5-min:  (@screen-4-max + 1);
+// @screen-5-max:  unit(floor((unit(@item-element-max-width + @gutter-width) * 5) / (unit(@container-width-lg) / 100)), px);
 
 
 // z-indexes
 
-@zindex-navbar:            1000;
+@z-index-navbar:            1000;
+@z-index-header:            1000;
