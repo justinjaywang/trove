@@ -43,7 +43,7 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     Page.setTitle('Trove / Featured'); // TEMP
     $scope.coverTitle = 'Featured Items';
     $scope.coverImageUrl = '';
-    $scope.headerStyle = 'light';
+    $scope.textColor = 'dark';
   }]);
 
 troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
@@ -54,7 +54,7 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
     }, function(err) {
       $scope.errorId = $routeParams.itemId;
     });
-    $scope.headerStyle = 'dark';
+    $scope.textColor = 'dark';
   }]);
 
 troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter', 'Page', 'Item', 'Category',
@@ -68,7 +68,7 @@ troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter'
         $scope.categoryItems = $filter('filter')(items, { category_id: category._id });
       });
     });
-    $scope.headerStyle = 'light';
+    $scope.textColor = 'light';
   }]);
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',
@@ -76,5 +76,5 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
     Page.setTitle('Trove / About'); // TEMP
     $scope.coverTitle = 'About';
     $scope.coverImageUrl = '';
-    $scope.headerStyle = 'dark';
+    $scope.textColor = 'dark';
   }]);
