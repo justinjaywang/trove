@@ -69,7 +69,7 @@
   list-style: none;
   margin-top: 1.5em;
   &:first-child {
-    margin-top: 1em;
+    margin-top: 1.5em;
   }
   &:last-child {
     margin-bottom: 2em;
@@ -83,10 +83,10 @@
 }
 .nav-list-header {
   text-transform: uppercase;
-  // font-weight: 600;
+  font-weight: 600;
   font-size: @font-size-h6;
   letter-spacing: 0.03em;
-  padding: floor(@nav-padding / 2) @nav-padding;
+  padding: @nav-padding-vertical @nav-padding-horizontal;
 }
 .nav-list-link {
   color: @gray-light;
@@ -96,5 +96,5 @@
     color: #fff; // TEMP
     background: rgba(255,255,255,0.1); // TEMP
   }
-  padding: floor(@nav-padding / 2) @nav-padding;
+  padding: @nav-padding-vertical @nav-padding-horizontal;
 }
