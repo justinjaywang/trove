@@ -17,6 +17,8 @@ troveControllers.controller('TitleCtrl', ['$scope', 'Page',
     $scope.textColor = 'test';
     $scope.parameters = {};
     $scope.parameters.titleColor = 'dark';
+    $scope.parameters.coverTitle = '';
+    $scope.parameters.coverImageUrl = 'http://dummyimage.com/1x1/000/';
   }]);
 
 troveControllers.controller('NavCtrl', ['$scope', 'Category',
@@ -51,9 +53,9 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     $scope.categories = Category.query();
     $scope.orderProp = '_id';
     Page.setTitle('Trove / Featured'); // TEMP
-    $scope.coverTitle = 'Featured Items';
-    $scope.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
+    $scope.parameters.coverTitle = 'Featured Items';
+    $scope.parameters.coverImageUrl = '';
 
   }]);
 
@@ -66,7 +68,8 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
       $scope.errorId = $routeParams.itemId;
     });
     $scope.parameters.titleColor = 'dark';
-
+    $scope.parameters.coverTitle = '';
+    $scope.parameters.coverImageUrl = '';
   }]);
 
 troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter', 'Page', 'Item', 'Category',
@@ -74,8 +77,8 @@ troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter'
     $scope.category = Category.get({id: $routeParams.categoryId}, function(category) {
       $scope.category = category;
       Page.setTitle('Trove / ' + category.display_name); // TEMP
-      $scope.coverTitle = category.display_name;
-      $scope.coverImageUrl = category.cover_image_url;
+      $scope.parameters.coverTitle = category.display_name;
+      $scope.parameters.coverImageUrl = category.cover_image_url;
       Item.query().$promise.then(function(items) {
         $scope.categoryItems = $filter('filter')(items, { category_id: category._id });
       });
@@ -87,8 +90,8 @@ troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter'
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',
   function($scope, Page) {
     Page.setTitle('Trove / About'); // TEMP
-    $scope.coverTitle = 'About';
-    $scope.coverImageUrl = '';
+    $scope.parameters.coverTitle = 'About';
+    $scope.parameters.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
-    
+
   }]);
