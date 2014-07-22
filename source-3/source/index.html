@@ -14,7 +14,7 @@
 
   <div class="surface-container">
     <ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
-    <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor" ng-hide="parameters.coverTitle == ''"></ng-include>
+    <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor"></ng-include>
     <main ng-view class="main-content"></main>
   </div>
 
