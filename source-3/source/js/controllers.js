@@ -27,6 +27,13 @@ troveControllers.controller('HeaderCtrl', ['$scope',
 
 troveControllers.controller('CoverCtrl', ['$scope',
   function($scope) {
+    $scope.getCoverImageUrl = function(coverImageUrl) {
+      if (coverImageUrl) {
+        return 'url(\'' + coverImageUrl + '\')';
+      } else {
+        return 'none';
+      }
+    };
     // $scope.coverTitle;
     // $scope.init = function(coverTitle, coverImageUrl) {
     //   // set parameters if defined, otherwise default
