@@ -8,13 +8,15 @@
   <link rel="stylesheet" href="css/all.css"><!-- TO DO: switch to minified version -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-class="{navTransitioning: parameters.isNavTransitioning, navOpen: parameters.isNavOpen}">
 
   <ng-include src="'/partials/nav.html'" ng-controller="NavCtrl"></ng-include>
-  <ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
-  <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor" ng-hide="parameters.coverTitle == ''"></ng-include>
 
-  <div ng-view></div>
+  <div class="surface-container">
+    <ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
+    <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor" ng-hide="parameters.coverTitle == ''"></ng-include>
+    <main ng-view class="main-content"></main>
+  </div>
 
   <script src="/js/packages/jquery/dist/jquery.js"></script>
   <script src="/js/packages/angular/angular.js"></script>

@@ -1,8 +1,6 @@
-<main class="main-content">
-  <div class="grid-container">
-    <h5>Number of items: {{items.length}}</h5>
-    <ul class="item-element-list">
-      <ng-include src="'/partials/item-element.html'" ng-repeat="item in items" /></ng-include>
-    </ul>
-  </div>
-</main>
+<div class="grid-container">
+  <h5>Number of items: {{items.length}}</h5>
+  <ul class="item-element-list">
+    <ng-include src="'/partials/item-element.html'" ng-repeat="item in items" /></ng-include>
+  </ul>
+</div>

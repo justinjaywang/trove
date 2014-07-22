@@ -12,22 +12,31 @@ troveControllers.controller('TitleCtrl', ['$scope', 'Page',
   function($scope, Page) {
     $scope.Page = Page;
     // defaults
-    $scope.coverTitle = ''
-    $scope.coverImageUrl = 'http://dummyimage.com/1x1/000/';
-    $scope.textColor = 'test';
     $scope.parameters = {};
     $scope.parameters.titleColor = 'dark';
     $scope.parameters.coverTitle = '';
     $scope.parameters.coverImageUrl = 'http://dummyimage.com/1x1/000/';
+    $scope.parameters.isNavTransitioning = false;
+    $scope.parameters.isNavOpen = false;
   }]);
 
-troveControllers.controller('NavCtrl', ['$scope', 'Category',
-  function($scope, Category) {
+troveControllers.controller('NavCtrl', ['$scope', '$timeout', 'Category',
+  function($scope, $timeout, Category) {
     $scope.categories = Category.query();
+    $scope.closeNav = function() {
+      $scope.parameters.isNavOpen = false;
+      $timeout(function() {
+        $scope.parameters.isNavTransitioning = false;
+      }, 200);
+    };
   }]);
 
 troveControllers.controller('HeaderCtrl', ['$scope',
   function($scope) {
+    $scope.openNav = function() {
+      $scope.parameters.isNavTransitioning = true;
+      $scope.parameters.isNavOpen = true;
+    };
   }]);
 
 troveControllers.controller('CoverCtrl', ['$scope',
@@ -39,12 +48,6 @@ troveControllers.controller('CoverCtrl', ['$scope',
         return 'none';
       }
     };
-    // $scope.coverTitle;
-    // $scope.init = function(coverTitle, coverImageUrl) {
-    //   // set parameters if defined, otherwise default
-    //   $scope.coverTitle = typeof coverTitle !== 'undefined' ? coverTitle : '';
-    //   $scope.coverImageUrl = typeof coverImageUrl !== 'undefined' ? coverImageUrl : '';
-    // };
   }]);
 
 troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
@@ -56,7 +59,6 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     $scope.parameters.titleColor = 'dark';
     $scope.parameters.coverTitle = 'Featured Items';
     $scope.parameters.coverImageUrl = '';
-
   }]);
 
 troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
@@ -84,7 +86,6 @@ troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter'
       });
     });
     $scope.parameters.titleColor = 'light';
-
   }]);
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',
@@ -93,5 +94,4 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
     $scope.parameters.coverTitle = 'About';
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
-
   }]);
