@@ -2,6 +2,7 @@
 
 .header {
   position: absolute;
+  top: 0;
   z-index: @z-index-header;
   text-align: center;
   background: rgba(0,0,0,.15); // TEMP
@@ -9,11 +10,20 @@
   left: unit(((100 - unit(@container-width))/2), %);
   margin-left: auto;
   margin-right: auto;
+  height: @header-height;
+}
+
+.header-item {
+  display: inline-block;
+  padding-top: @header-item-padding-vertical;
+  padding-bottom: @header-item-padding-vertical;
 }
 
 .header-button {
   position: absolute;
   color: inherit;
+  height: @header-item-height;
+  // line-height: @header-item-height;
 }
 
 .menu-button {
@@ -22,6 +32,11 @@
 
 .search-button {
   right: (@gutter-width / 2);
+}
+
+#logo {
+  fill: @gray-dark;
+  height: @header-item-height;
 }
 
 @media (min-width: @screen-4-min) {
@@ -41,5 +56,8 @@
 .light {
   .header {
     color: @gray-lighter;
+  }
+  #logo {
+    fill: @gray-lighter;
   }
 }

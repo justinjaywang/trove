@@ -1,9 +1,11 @@
 <nav class="nav nav-lists">
-  <ul class="nav-list">
-    <li class="nav-list-item"><a class="nav-list-link" href="/">Home</a></li>
-    <li class="nav-list-item" ng-repeat="category in categories">
-      <a class="nav-list-link" href="/category/{{category._id}}">{{category.display_name}}</a>
-    </li>
-    <li class="nav-list-item"><a class="nav-list-link" href="/about">About</a></li>
-  </ul>
+  <div class="nav-inner">
+    <ul class="nav-list">
+      <li class="nav-list-item"><a class="nav-list-link" href="/">Home</a></li>
+      <li class="nav-list-item" ng-repeat="category in categories">
+        <a class="nav-list-link" href="/category/{{category._id}}">{{category.display_name}}</a>
+      </li>
+      <li class="nav-list-item"><a class="nav-list-link" href="/about">About</a></li>
+    </ul>
+  </div>
 </nav>
