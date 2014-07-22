@@ -57,7 +57,7 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     $scope.orderProp = '_id';
     Page.setTitle('Trove / Featured'); // TEMP
     $scope.parameters.titleColor = 'dark';
-    $scope.parameters.coverTitle = 'Featured Items';
+    $scope.parameters.coverTitle = 'Featured';
     $scope.parameters.coverImageUrl = '';
   }]);
 
@@ -92,6 +92,14 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
   function($scope, Page) {
     Page.setTitle('Trove / About'); // TEMP
     $scope.parameters.coverTitle = 'About';
+    $scope.parameters.coverImageUrl = '';
+    $scope.parameters.titleColor = 'dark';
+  }]);
+
+troveControllers.controller('ContactCtrl', ['$scope', 'Page',
+  function($scope, Page) {
+    Page.setTitle('Trove / Contact'); // TEMP
+    $scope.parameters.coverTitle = 'Contact';
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
   }]);

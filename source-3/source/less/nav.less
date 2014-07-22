@@ -12,7 +12,7 @@
   bottom: 0;
   position: absolute;
   // display: none;
-  z-index: auto; // TEMP
+  // z-index: auto; // TEMP
 
 }
 .nav-inner {
@@ -32,10 +32,7 @@
 .surface-container {
   height: 100%;
   background: inherit;
-  -webkit-transition: -webkit-transform .2s cubic-bezier(.2, .3, .25, .9);
-  -moz-transition: -moz-transform .2s cubic-bezier(.2, .3, .25, .9);
-  -o-transition: -o-transform .2s cubic-bezier(.2, .3, .25, .9);
-  transition: transform .2s cubic-bezier(.2, .3, .25, .9);
+  .transition-transform(.2s cubic-bezier(.2, .3, .25, .9));
 }
 
 .navTransitioning {
@@ -43,28 +40,23 @@
   height: 100%;
   .nav {
     position: fixed;
-    z-index: auto; // TEMP
+    z-index: auto;
   }
   .nav-inner {
     display: block;
-    width: 280px;
-    padding: @nav-padding;
+    width: @nav-width;
+    // padding: @nav-padding;
   }
 }
 
 .navOpen {
   .nav-overlay {
-    left: 280px; // TO DO: variable-ize
+    left: @nav-width;
     display: block;
-    // background: rgba(255,0,0,0.2);
-    z-index: 1050; // TEMP
+    z-index: @z-index-nav-overlay;
   }
   .surface-container {
-    -webkit-transform: translate3d(280px, 0, 0); // TO DO: mixin-ize
-    -moz-transform: translate3d(280px, 0, 0);
-    -ms-transform: translate3d(280px, 0, 0);
-    -o-transform: translate3d(280px, 0, 0);
-    transform: translate3d(280px, 0, 0);
+    .translate(@nav-width, 0);
   }
 }
 
@@ -75,24 +67,34 @@
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+  margin-top: 1.5em;
+  &:first-child {
+    margin-top: 1em;
+  }
+  &:last-child {
+    margin-bottom: 2em;
+  }
   // color: @gray;
 }
 .nav-list-item {
   // // font-size: 20px; // TEMP
-  // font-size: @font-size-h4;
+  font-size: @font-size-h4;
   // // font-weight: 300;
 }
-.nav-list-header, .nav-list-item-small {
-  // text-transform: uppercase;
+.nav-list-header {
+  text-transform: uppercase;
   // font-weight: 600;
-  // font-size: @font-size-h6;
+  font-size: @font-size-h6;
+  letter-spacing: 0.03em;
+  padding: floor(@nav-padding / 2) @nav-padding;
 }
 .nav-list-link {
   color: @gray-light;
   // display: block !important;
+  display: block;
   &.active, &:hover {
     color: #fff; // TEMP
-  //   background: rgba(255,255,255,0.1); // TEMP
+    background: rgba(255,255,255,0.1); // TEMP
   }
-  // padding: 8px 0;
+  padding: floor(@nav-padding / 2) @nav-padding;
 }

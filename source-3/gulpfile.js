@@ -73,7 +73,7 @@ gulp.task('styles', function () {
   return gulp.src(paths.styles)
     // .pipe(changed(dest.styles)) // exclude unmodified files
     .pipe(less())
-    .pipe(autoprefixer())
+    // .pipe(autoprefixer())
     .pipe(gulp.dest(dest.styles))
     .pipe(minifycss())
     .pipe(rename({extname: '.min.css'}))
