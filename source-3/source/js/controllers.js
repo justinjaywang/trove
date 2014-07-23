@@ -8,8 +8,8 @@ var troveControllers = angular.module('troveControllers', []);
 //   function($scope) {
 //   }]);
 
-troveControllers.controller('TitleCtrl', ['$scope', 'Page',
-  function($scope, Page) {
+troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
+  function($scope, $timeout, Page) {
     $scope.Page = Page;
     // defaults
     $scope.parameters = {};
@@ -18,17 +18,25 @@ troveControllers.controller('TitleCtrl', ['$scope', 'Page',
     $scope.parameters.coverImageUrl = 'http://dummyimage.com/1x1/000/';
     $scope.parameters.isNavTransitioning = false;
     $scope.parameters.isNavOpen = false;
-  }]);
-
-troveControllers.controller('NavCtrl', ['$scope', '$timeout', 'Category',
-  function($scope, $timeout, Category) {
-    $scope.categories = Category.query();
-    $scope.closeNav = function() {
+    // functions
+    $scope.parameters.closeNav =  function() {
       $scope.parameters.isNavOpen = false;
       $timeout(function() {
         $scope.parameters.isNavTransitioning = false;
       }, 200);
     };
+    // $scope.$on('$routeChangeStart', function(next, current) { 
+    //   console.log('route change start')
+    // });
+    $scope.$on('$routeChangeSuccess', function(next, current) { 
+      $scope.parameters.closeNav();
+    });
+  }]);
+
+troveControllers.controller('NavCtrl', ['$scope', '$timeout', 'Category',
+  function($scope, $timeout, Category) {
+    $scope.categories = Category.query();
+    $scope.closeNav = $scope.parameters.closeNav;
   }]);
 
 troveControllers.controller('HeaderCtrl', ['$scope',

@@ -1,5 +1,14 @@
-<div class="grid-container">
-  <img ng-src="{{item.image_url}}" />
-  <h1>{{item.name}}</h1>
-  <p>{{item.description}}</p>
+<div class="grid-container item-detail">
+  <div class="grid-row">
+    <div class="grid-column item-detail-image-wrapper">
+      <img ng-src="{{item.image_url}}" class="item-detail-image" />
+    </div>
+    <div class="grid-column item-detail-header">
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+  
+  <div class="item-detail-more-info">
+  </div>
 </div>

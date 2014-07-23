@@ -5,7 +5,7 @@
   top: 0;
   z-index: @z-index-header;
   text-align: center;
-  background: rgba(0,0,0,.15); // TEMP
+  // background: rgba(0,0,0,.15); // TEMP
   width: @container-width;
   left: unit(((100 - unit(@container-width))/2), %);
   margin-left: auto;
@@ -46,10 +46,10 @@
     left: 0;
   }
   .menu-button {
-    left: 1.4em; // TO DO: variable-ize
+    left: @header-button-horizontal;
   }
   .search-button {
-    right: 1.4em;
+    right: @header-button-horizontal;
   }
 }
 

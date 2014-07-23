@@ -6,7 +6,7 @@
   padding-left: (@gutter-width / 2);
   padding-right: (@gutter-width / 2);
   width: @container-width;
-  background: rgba(86,61,124,.15); // TEMP
+  // background: rgba(86,61,124,.15); // TEMP
 }
 
 @media (min-width: @screen-3-min) {
@@ -14,4 +14,19 @@
     width: @container-width-lg;
     max-width: @container-max-width-lg;
   }
+}
+
+.grid-row {
+  margin-left: (-@gutter-width / 2);
+  margin-right: (-@gutter-width / 2);
+}
+
+.grid-column {
+  padding: (@gutter-width / 2);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.make-grid-column-inverse(@n) {
+  width: calc(100% / @n);
 }
