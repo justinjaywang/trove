@@ -21,4 +21,5 @@ _site
 Thumbs.db
 
 archive
+build
 node_modules
