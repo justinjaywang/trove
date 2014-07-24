@@ -1,7 +1,7 @@
 // nav.less
 
 .nav {
-  background: lighten(@gray-dark, 7.5%); // TEMP
+  background: @gray-darker; // TEMP
   color: @gray-light;
   top: 0;
   left: 0;
@@ -79,13 +79,14 @@
   font-size: @font-size-h6;
   letter-spacing: 0.03em;
   padding: @nav-padding-vertical @nav-padding-horizontal;
+  color: @gray;
 }
 .nav-list-link {
   color: @gray-light;
   display: block;
   &.active, &:hover {
     color: #fff; // TEMP
-    background: rgba(255,255,255,0.1); // TEMP
+    background: lighten(@gray-darker, 7.5%); // TEMP
   }
   padding: @nav-padding-vertical @nav-padding-horizontal;
 }
