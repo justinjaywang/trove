@@ -12,9 +12,12 @@
   .cover-image {
     display: none;
   }
-  padding-top: 200px;
+  padding-top: 180px;
   min-height: 0;
-  background: @gray-light;
+  background: @gray-lighter;
+  .cover-image-fader {
+    display: none;
+  }
 }
 
 .titleless.cover {
@@ -22,7 +25,10 @@
     display: none;
   }
   padding-top: @header-height;
-  background: @gray-light;
+  background: @gray-lighter;
+  .cover-image-fader {
+    display: none;
+  }
 }
 
 // .header {
@@ -37,7 +43,7 @@
   width: 100%;
   text-align: center;
   position: absolute;
-  bottom: 20px; // TO DO
+  bottom: 8%; // TO DO
 }
 
 // .cover-title {
@@ -45,7 +51,16 @@
 // }
 
 .cover-image {
-  // background-color: #000;
+  background-color: @gray-dark;
+  background-size: cover;
+}
+
+.cover-image-fader {
+  background: rgba(0,0,0,0.25);
+}
+
+.cover-image,
+.cover-image-fader {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -53,7 +68,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-size: cover;
 }
 
 .light {

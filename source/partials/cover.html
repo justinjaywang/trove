@@ -1,5 +1,7 @@
 <div class="cover" ng-class="{imageless: !parameters.coverImageUrl, titleless: !parameters.coverTitle}">
-  <div class="cover-image" ng-style="{'background-image': getCoverImageUrl(parameters.coverImageUrl)}"></div>
+  <!-- <div class="cover-image" ng-style="{'background-image': getCoverImageUrl(parameters.coverImageUrl)}"></div> -->
+  <div class="cover-image" ng-style="parameters.coverImageUrl != '' && {'background-image': 'url(' + parameters.coverImageUrl + ')'}"></div>
+  <div class="cover-image-fader"></div>
     <div class="cover-text">
       <div class="grid-container">
         <h1 class="cover-title">{{parameters.coverTitle}}</h1>
