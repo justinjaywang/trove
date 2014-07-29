@@ -1,8 +1,8 @@
 // nav.less
 
 .nav {
-  background: @gray-darker; // TEMP
-  color: @gray-light;
+  background: @nav-bg; // TEMP
+  color: @nav-color;
   top: 0;
   left: 0;
   bottom: 0;
@@ -38,6 +38,8 @@
   .nav-inner {
     display: block;
     width: @nav-width;
+    border-left: 1px solid @nav-bg;
+    border-right: 1px solid @nav-bg;
   }
 }
 
@@ -61,7 +63,7 @@
   list-style: none;
   margin-top: 1.5em;
   &:first-child {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
   &:last-child {
     margin-bottom: 2em;
@@ -76,17 +78,23 @@
 .nav-list-header {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: @font-size-h6;
-  letter-spacing: 0.03em;
+  // font-size: @font-size-h5;
+  // letter-spacing: 0.03em;
   padding: @nav-padding-vertical @nav-padding-horizontal;
   color: darken(@gray, 7.5%);
 }
 .nav-list-link {
   color: @gray-light;
   display: block;
-  &.active, &:hover {
+  &.active {
     color: #fff; // TEMP
-    // background: lighten(@gray-darker, 7.5%); // TEMP
+    // background: darken(@nav-bg, 6%); // TEMP
+    background: lighten(@nav-bg, 6%); // TEMP
+    
+  }
+  &:hover {
+    color: #fff; // TEMP
+    // background: lighten(@nav-bg, 6%); // TEMP
   }
   padding: @nav-padding-vertical @nav-padding-horizontal;
 }

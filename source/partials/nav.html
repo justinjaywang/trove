@@ -2,9 +2,9 @@
   <div class="nav-lists nav-inner">
     <ul class="nav-list nav-list-browse">
       <li class="nav-list-header">Browse</li>
-      <li class="nav-list-item"><a class="nav-list-link" href="/">Featured</a></li>
+      <li class="nav-list-item"><a class="nav-list-link" ng-class="{active: isActive('/')}" href="/">Featured</a></li>
       <li class="nav-list-item" ng-repeat="category in categories">
-        <a class="nav-list-link" href="/category/{{category._id}}">{{category.display_name}}</a>
+        <a class="nav-list-link" ng-class="{active: isActive('/category/{{category._id}}')}" href="/category/{{category._id}}">{{category.display_name}}</a>
       </li>
     </ul>
     <ul class="nav-list nav-list-my-items">
@@ -16,8 +16,8 @@
     <ul class="nav-list nav-list-app">
       <li class="nav-list-header">App</li>
       <li class="nav-list-item"><a class="nav-list-link" href="/">Home</a></li>
-      <li class="nav-list-item"><a class="nav-list-link" href="/about">About</a></li>
-      <li class="nav-list-item"><a class="nav-list-link" href="/contact">Contact</a></li>
+      <li class="nav-list-item"><a class="nav-list-link" ng-class="{active: isActive('/about')}" href="/about">About</a></li>
+      <li class="nav-list-item"><a class="nav-list-link" ng-class="{active: isActive('/contact')}" href="/contact">Contact</a></li>
     </ul>
   </div>
 </nav>

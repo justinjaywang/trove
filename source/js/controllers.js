@@ -33,10 +33,16 @@ troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
     });
   }]);
 
-troveControllers.controller('NavCtrl', ['$scope', '$timeout', 'Category',
-  function($scope, $timeout, Category) {
+troveControllers.controller('NavCtrl', ['$scope', '$location', '$timeout', 'Category',
+  function($scope, $location, $timeout, Category) {
     $scope.categories = Category.query();
     $scope.closeNav = $scope.parameters.closeNav;
+    $scope.isActive = function(path) {
+      if (path == $location.path()) {
+        return true;
+      }
+      return false;
+    };
   }]);
 
 troveControllers.controller('HeaderCtrl', ['$scope',
@@ -86,12 +92,11 @@ troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter'
   function($scope, $routeParams, $filter, Page, Item, Category) {
     $scope.category = Category.get({id: $routeParams.categoryId}, function(category) {
       $scope.category = category;
+      $scope.parameters.coverTitle = category.display_name;
+      $scope.parameters.coverImageUrl = category.cover_image_url;
       Page.setTitle(category.display_name + ' Designs - Trove'); // TEMP
-      
       Item.query().$promise.then(function(items) {
         $scope.categoryItems = $filter('filter')(items, { category_id: category._id });
-        $scope.parameters.coverTitle = category.display_name;
-        $scope.parameters.coverImageUrl = category.cover_image_url;
       });
     });
     $scope.parameters.titleColor = 'light';
