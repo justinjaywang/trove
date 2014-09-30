@@ -17,12 +17,16 @@
   display: inline-block;
   padding-top: @header-item-padding-vertical;
   padding-bottom: @header-item-padding-vertical;
+  height: @header-height;
 }
 
 .header-button {
   position: absolute;
-  color: inherit;
-  height: @header-item-height;
+  // text-transform: uppercase;
+  // font-weight: 600;
+  &, &:hover {
+    color: inherit;
+  }
   // line-height: @header-item-height;
 }
 
