@@ -18,7 +18,8 @@ var paths = {
   templates: ['source/**/*.html'],
   scripts:   ['source/js/**/*.js'],
   styles:    ['source/less/all.less'],
-  images:    ['source/img/**/*']
+  images:    ['source/img/**/*'],
+  statics:   ['source/static/**/*']
   // data:      ['source/data/**/*.json']
 };
 
@@ -28,7 +29,8 @@ var dest = {
 dest.templates =  dest.build;
 dest.scripts =    dest.build + '/js';
 dest.styles =     dest.build + '/css';
-dest.images =     dest.build + '/img';
+// dest.images =     dest.build + '/img';
+dest.statics =     dest.build + '/static';
 // dest.data =       dest.build + '/data';
 
 gulp.task('clean', function () {  
@@ -81,12 +83,20 @@ gulp.task('styles', function () {
     .on('error', util.log);
 });
   
-// Copy all static images
-gulp.task('images', function() {
- return gulp.src(paths.images)
+// // Copy all static images
+// gulp.task('images', function() {
+//  return gulp.src(paths.images)
+//     // Pass in options to the task
+//     .pipe(cache(imagemin())) // only compress changed images
+//     .pipe(gulp.dest(dest.images))
+//     .on('error', util.log);
+// });
+
+// Copy all static assets
+gulp.task('statics', function() {
+ return gulp.src(paths.statics)
     // Pass in options to the task
-    .pipe(cache(imagemin())) // only compress changed images
-    .pipe(gulp.dest(dest.images))
+    .pipe(gulp.dest(dest.statics))
     .on('error', util.log);
 });
 
@@ -102,9 +112,9 @@ gulp.task('watch', function() {
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(['source/less/**/*.less'], ['styles']);
-  gulp.watch(paths.images, ['images']);
+  // gulp.watch(paths.images, ['images']);
   // gulp.watch(paths.data, ['data']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['templates', 'scripts', 'styles', 'images',/* 'data',*/ 'watch']);
+gulp.task('default', ['templates', 'scripts', 'styles', 'statics', /*'images',*//* 'data',*/ 'watch']);
