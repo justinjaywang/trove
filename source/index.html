@@ -5,26 +5,26 @@
   <title ng-bind="Page.title()"></title>
   <meta name="description" content="A collection of 3D designs">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-  <link rel="stylesheet" href="css/all.css"><!-- TO DO: switch to minified version -->
+  <link rel="stylesheet" href="assets/all.css"><!-- TO DO: switch to minified version -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
 <body ng-class="{navTransitioning: parameters.isNavTransitioning, navOpen: parameters.isNavOpen}">
 
-  <ng-include src="'/partials/nav.html'" ng-controller="NavCtrl"></ng-include>
+  <ng-include src="'/views/nav.html'" ng-controller="NavCtrl"></ng-include>
 
   <div class="surface-container">
-    <ng-include src="'/partials/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
-    <ng-include src="'/partials/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor"></ng-include>
+    <ng-include src="'/views/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
+    <ng-include src="'/views/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor"></ng-include>
     <main ng-view class="main-content"></main>
   </div>
 
-  <script src="/js/lib/jquery/dist/jquery.js"></script>
-  <script src="/js/lib/angular/angular.js"></script>
-  <!-- <script src="/js/lib/angular-animate/angular-animate.js"></script>--><!-- TO DO: switch to minified version -->
-  <script src="/js/lib/angular-route/angular-route.js"></script>
-  <script src="/js/lib/angular-resource/angular-resource.js"></script>
+  <script src="/assets/lib/jquery/dist/jquery.js"></script>
+  <script src="/assets/lib/angular/angular.js"></script>
+  <!-- <script src="/assets/lib/angular-animate/angular-animate.js"></script>--><!-- TO DO: switch to minified version -->
+  <script src="/assets/lib/angular-route/angular-route.js"></script>
+  <script src="/assets/lib/angular-resource/angular-resource.js"></script>
 
-  <script src="/js/all.min.js"></script><!-- TO DO: switch to minified version -->
+  <script src="/assets/all.js"></script><!-- TO DO: switch to minified version -->
 
 </body>
 </html>
