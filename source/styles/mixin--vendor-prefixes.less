@@ -1,5 +1,3 @@
-// mixins/vendor-prefixes.less
-
 // drop shadows
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
@@ -26,14 +24,12 @@
        -o-transition: @transition;
           transition: @transition;
 }
-
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
       -ms-transform: translate(@x, @y); // IE9 only
        -o-transform: translate(@x, @y);
           transform: translate(@x, @y);
 }
-
 .transition-transform(@transition) {
   -webkit-transition: -webkit-transform @transition;
      -moz-transition: -moz-transform @transition;
@@ -42,7 +38,6 @@
 }
 
 // user select
-
 .user-select(@select) {
   -webkit-user-select: @select;
      -moz-user-select: @select;

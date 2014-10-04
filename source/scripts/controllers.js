@@ -109,11 +109,3 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
   }]);
-
-troveControllers.controller('ContactCtrl', ['$scope', 'Page',
-  function($scope, Page) {
-    Page.setTitle('Contact Trove'); // TEMP
-    $scope.parameters.coverTitle = 'Contact';
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.titleColor = 'dark';
-  }]);

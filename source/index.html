@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="assets/all.css"><!-- TO DO: switch to minified version -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
-<body ng-class="{navTransitioning: parameters.isNavTransitioning, navOpen: parameters.isNavOpen}">
+<body ng-class="{isNavTransitioning: parameters.isNavTransitioning, isNavOpen: parameters.isNavOpen}">
 
   <ng-include src="'/views/nav.html'" ng-controller="NavCtrl"></ng-include>
 
-  <div class="surface-container">
+  <div class="surfaceContainer">
     <ng-include src="'/views/header.html'" ng-controller="HeaderCtrl" ng-class="parameters.titleColor"></ng-include>
     <ng-include src="'/views/cover.html'" ng-controller="CoverCtrl" ng-class="parameters.titleColor"></ng-include>
     <main ng-view class="main-content"></main>

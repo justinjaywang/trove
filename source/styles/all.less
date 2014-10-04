@@ -1,16 +1,26 @@
-// all.less
-
-@import "variables.less";
+// core variables and mixins
+@import "vars.less";
 @import "mixins.less";
-@import "normalize.less";
-@import "scaffolding.less";
-@import "type.less";
-@import "grid.less";
-@import "transitions.less";
 
+// reset and dependencies
+@import "normalize.less";
+@import "print.less";
+
+// core
+@import "core.less";
+@import "type.less";
+@import "layout.less";
+
+// components
 @import "nav.less";
 @import "header.less";
 @import "cover.less";
-@import "content.less";
-@import "item-elements.less";
-@import "buttons.less";
+// @import "buttons.less";
+
+// utilities
+
+// @import "scaffolding.less";
+// @import "grid.less";
+// @import "transitions.less";
+// @import "content.less";
+// @import "item-elements.less";

@@ -1,4 +1,4 @@
-// scaffolding.less
+// core styles
 
 * {
   .box-sizing(border-box);
@@ -8,26 +8,21 @@
   .box-sizing(border-box);
 }
 
-
-// body reset
-
+// body
 html {
-  font-size: 100%;
+  font-size: @fontMultiplier--base;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   height: 100%;
 }
-
 body {
-  font-family: @font-family-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
+  font-family: @fontFamily--body;
+  line-height: @lineHeight--body;
+  color: @color--body;
+  background-color: @color--bodyBg;
   .font-smoothing(antialiased);
-  // text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
   height: 100%;
 }
-
-
 input,
 button,
 select,
@@ -37,27 +32,21 @@ textarea {
   line-height: inherit;
 }
 
-
 // links
-
 a {
-  color: @link-color;
+  color: @color--link;
   text-decoration: none;
   cursor: pointer;
-
   &:hover,
   &:focus {
-    color: @link-hover-color;
-    // text-decoration: underline;
+    color: @color--linkHover;
   }
   // &:focus {
   //   .tab-focus();
   // }
 }
 
-
 // images
-
 img {
   vertical-align: middle;
 }

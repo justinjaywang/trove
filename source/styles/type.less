@@ -1,49 +1,60 @@
-// type.less
-
 // headings
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: @headings-font-family;
-  line-height: @headings-line-height;
-  color: @headings-color;
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  font-family: @fontFamily--headings;
+  line-height: @lineHeight--headings;
+  color: @color--headings;
 }
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
-
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
-h1 { font-size: @font-size-h1-sm; }
-h2 { font-size: @font-size-h2-sm; }
-h3 { font-size: @font-size-h3; }
-h4 { font-size: @font-size-h4; }
-h5 { font-size: @font-size-h5; }
-h6 { font-size: @font-size-h6; }
-
-h1, h2 { font-weight: 300; }
-h3, h4 { font-weight: 400; }
-h5, h6 { font-weight: 600; text-transform: uppercase; }
-
-@media (min-width: @screen-3-min) {
-  h1 { font-size: @font-size-h1; }
-  h2 { font-size: @font-size-h2; }
+h1 { 
+  font-size: @fontSize--h1;
+  font-weight: @fontWeight--h1;
 }
-
-
-// body text
-
+h2 { 
+  font-size: @fontSize--h2;
+  font-weight: @fontWeight--h2;
+}
+h3 { 
+  font-size: @fontSize--h3; 
+  font-weight: @fontWeight--h3;
+}
+h4 { 
+  font-size: @fontSize--h4; 
+  font-weight: @fontWeight--h4;
+}
+h5 { 
+  font-size: @fontSize--h5; 
+  font-weight: @fontWeight--h5;
+}
+h6 { 
+  font-size: @fontSize--h6; 
+  font-weight: @fontWeight--h6;
+}
+h5,
+h6 { 
+  text-transform: uppercase; 
+}
 p {
-  margin: 0 0 1rem;
+  font-size: @fontSize--p; 
+  font-weight: @fontWeight--p;
 }
-
 
 // lists
-
 ul,
 ol {
   margin-top: 0;
@@ -54,13 +65,11 @@ ol {
   }
 }
 
-
 // code 
-
 code,
 kbd,
 pre,
 samp {
-  font-family: @font-family-monospace;
-  font-size: @font-size-small;
+  font-family: @fontFamily--code;
+  font-size: @fontSize--code;
 }

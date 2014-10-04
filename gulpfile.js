@@ -91,7 +91,7 @@ gulp.task('statics', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.views, ['views']);
   gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(['source/less/**/*.less'], ['styles']);
+  gulp.watch(['source/styles/**/*.less'], ['styles']);
 });
 
 // The default task (called when you run `gulp` from cli)

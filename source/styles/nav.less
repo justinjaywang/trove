@@ -1,8 +1,6 @@
-// nav.less
-
 .nav {
-  background: @nav-bg; // TEMP
-  color: @nav-color;
+  background: @color--navBg;
+  color: @color--nav;
   top: 0;
   left: 0;
   bottom: 0;
@@ -14,7 +12,7 @@
   -webkit-overflow-scrolling: touch;
   height: 100%;
 }
-.nav-overlay {
+.navOverlay {
   display: none;
   position: fixed;
   left: 0;
@@ -22,13 +20,12 @@
   right: 0;
   bottom: 0;
 }
-.surface-container {
+.surfaceContainer {
   height: 100%;
   background: inherit;
   .transition-transform(.2s cubic-bezier(.2, .3, .25, .9));
 }
-
-.navTransitioning {
+.isNavTransitioning {
   overflow: hidden;
   height: 100%;
   .nav {
@@ -37,23 +34,21 @@
   }
   .nav-inner {
     display: block;
-    width: @nav-width;
-    border-left: 1px solid @nav-bg;
-    border-right: 1px solid @nav-bg;
+    width: @width--nav;
+    border-left: 1px solid @color--navBg;
+    border-right: 1px solid @color--navBg;
   }
 }
-
-.navOpen {
-  .nav-overlay {
-    left: @nav-width;
+.isNavOpen {
+  .navOverlay {
+    left: @width--nav;
     display: block;
-    z-index: @z-index-nav-overlay;
+    z-index: @zIndex-navOverlay;
   }
-  .surface-container {
-    .translate(@nav-width, 0);
+  .surfaceContainer {
+    .translate(@width--nav, 0);
   }
 }
-
 .nav-lists {
   // margin-top: 1em;
 }
@@ -64,7 +59,7 @@
   margin-top: 1.5em;
   &:first-child {
     // margin-top: (@nav-padding-horizontal - @nav-padding-vertical);
-    margin-top: @nav-padding-horizontal;
+    margin-top: @space--nav-vertical;
   }
   &:last-child {
     margin-bottom: 2em;
@@ -73,29 +68,29 @@
 }
 .nav-list-item {
   // // font-size: 20px; // TEMP
-  font-size: @font-size-h4;
+  // font-size: @font-size-h4;
   // // font-weight: 300;
 }
 .nav-list-header {
-  text-transform: uppercase;
-  font-weight: 600;
+  // text-transform: uppercase;
+  // font-weight: 600;
   // font-size: @font-size-h5;
   // letter-spacing: 0.03em;
-  padding: @nav-padding-vertical @nav-padding-horizontal;
-  color: darken(@gray, 7.5%);
+  padding: @space--nav-vertical @space--nav-horizontal;
+  // color: darken(@gray, 7.5%);
 }
 .nav-list-link {
-  color: @gray-light;
+  // color: @gray-light;
   display: block;
   &.active {
-    color: #fff; // TEMP
+    // color: #fff; // TEMP
     // background: darken(@nav-bg, 6%); // TEMP
-    background: lighten(@nav-bg, 6%); // TEMP
+    // background: lighten(@nav-bg, 6%); // TEMP
 
   }
   &:hover {
-    color: #fff; // TEMP
+    // color: #fff; // TEMP
     // background: lighten(@nav-bg, 6%); // TEMP
   }
-  padding: @nav-padding-vertical @nav-padding-horizontal;
+  padding: @space--nav-vertical @space--nav-horizontal;
 }
