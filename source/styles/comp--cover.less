@@ -1,46 +1,48 @@
 .cover {
   position: relative;
-  padding-top: @aspect--cover;
-  // padding-top: 38.196601125%;
   min-height: @minHeight--cover;
   max-height: @maxHeight--cover;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: @aspect--cover;
+  }
 }
 .cover.isImageless {
   .cover-image {
     display: none;
   }
-  padding-top: 180px;
-  min-height: 0;
+  height: @height--cover-imageless;
   background: rgba(0,0,0,0);
+  background: @color--temp; // TEMP
   .cover-imageFader {
     display: none;
+  }
+  &:before {
+    padding-bottom: 0;
   }
 }
 .cover.isTitleless {
   .cover-text {
     display: none;
   }
-  padding-top: @height--header;
   .cover-imageFader {
     display: none;
   }
 }
-// .header {
-//   text-align: center;
-// }
-
-// .logo {
-//   // fill: @gray-dark; //@brand-primary;
-// }
-.cover-text {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 8%; // TO DO
+.cover.isSubtitleless {
+  .cover-subtitle {
+    display: none;
+  }
 }
-// .cover-title {
-//   font-size: @font-size-h0;
-// }
+.cover-text {
+  text-align: center;
+}
+.cover-text-inner {
+  background: rgba(0,0,0,0.1); // TEMP
+  margin-bottom: @space--cover-text-bottom;
+}
 .cover-image {
   background-color: @color--coverBg;
   background-size: cover;
@@ -49,7 +51,8 @@
   background: rgba(0,0,0,0.2);
 }
 .cover-image,
-.cover-imageFader {
+.cover-imageFader,
+.cover-text {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -59,7 +62,14 @@
   right: 0;
 }
 .light {
-  .cover-text {
+  .cover-title,
+  .cover-subtitle {
     color: @color--header-light;
   }
+}
+.cover-title {
+  margin-bottom: 0;
+}
+.cover-subtitle {
+  margin-top: 0;
 }

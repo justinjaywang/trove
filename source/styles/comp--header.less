@@ -6,8 +6,8 @@
   background: rgba(0,0,0,.15); // TEMP
   width: @width--header;
   // left: unit(((100 - unit(@width--container))/2), %);
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   height: @height--header;
   color: @color--header;
 }
@@ -21,8 +21,9 @@
   padding-bottom: @space--headerItem-vertical;
   height: @height--header;
 }
-.header-button {
+.header-item--menu {
   position: absolute;
+  left: @space--headerItemMenu-left;
   // text-transform: uppercase;
   // font-weight: 600;
   &, &:hover {
@@ -38,4 +39,7 @@
   .header-logo {
     fill: @color--headerLogo-light;
   }
+}
+.icon-nav {
+  font-size: @fontSize--icon-nav;
 }

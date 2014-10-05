@@ -1,10 +1,11 @@
-<div class="cover" ng-class="{isImageless: !parameters.coverImageUrl, isTitleless: !parameters.coverTitle}">
+<div class="cover" ng-class="{isImageless: !parameters.coverImageUrl, isTitleless: !parameters.coverTitle, isSubtitleless: !parameters.coverSubtitle}">
   <!-- <div class="cover-image" ng-style="{'background-image': getCoverImageUrl(parameters.coverImageUrl)}"></div> -->
   <div class="cover-image" ng-style="parameters.coverImageUrl != '' && {'background-image': 'url(' + parameters.coverImageUrl + ')'}"></div>
   <div class="cover-imageFader"></div>
-    <div class="cover-text">
-      <div class="container">
+    <div class="cover-text u-alignBottom">
+      <div class="cover-text-inner container u-alignBlock">
         <h1 class="cover-title">{{parameters.coverTitle}}</h1>
+        <h4 class="cover-subtitle">{{parameters.coverSubtitle}}</h4>
       </div>
     </div>
   </div>
