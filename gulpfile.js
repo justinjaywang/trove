@@ -1,38 +1,28 @@
-var gulp =          require('gulp');
-var clean =         require('gulp-clean');
-var watch =         require('gulp-watch');
-var htmlmin =       require('gulp-htmlmin');
-var htmlify =       require('gulp-angular-htmlify');
-var concat =        require('gulp-concat');
-var uglify =        require('gulp-uglify');
-var less =          require('gulp-less');
-var autoprefixer =  require('gulp-autoprefixer');
-var minifycss =     require('gulp-minify-css');
-var rename =        require('gulp-rename');
-// var imagemin =      require('gulp-imagemin');
-var cache =         require('gulp-cache');
-var changed =       require('gulp-changed');
-var util =          require('gulp-util');
+var gulp         = require('gulp');
+var watch        = require('gulp-watch');
+var util         = require('gulp-util');
+var htmlmin      = require('gulp-htmlmin');
+var htmlify      = require('gulp-angular-htmlify');
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
+var less         = require('gulp-less');
+var autoprefixer = require('gulp-autoprefixer');
+var minifycss    = require('gulp-minify-css');
+var rename       = require('gulp-rename');
 
-var paths = {
-  views: ['source/**/*.html'],
-  scripts: ['source/scripts/**/*.js'],
-  styles: ['source/styles/all.less'],
-  statics: ['source/statics/**/*']
-};
+var paths = {};
+paths.views       = 'source/**/*.html';
+paths.scripts     = 'source/scripts/**/*.js';
+paths.styles      = 'source/styles/all.less';
+paths.statics     = 'source/statics/**/*';
+paths.rootStatics = 'source/root-statics/**/*';
 
-var dest = {
-  build:  'build'
-};
-dest.views = dest.build;
-dest.scripts = dest.build + '/assets';
-dest.styles = dest.build + '/assets';
-dest.statics = dest.build + '/assets';
-
-gulp.task('clean', function () {  
-  return gulp.src(dest.build, {read: false})
-    .pipe(clean());
-});
+var dest = { build:  'build' };
+dest.views       = dest.build;
+dest.scripts     = dest.build + '/assets';
+dest.styles      = dest.build + '/assets';
+dest.statics     = dest.build + '/assets';
+dest.rootStatics = dest.build;
 
 // gulp.task('views', function() {
 //   return gulp.src(paths.views)
@@ -45,7 +35,7 @@ gulp.task('clean', function () {
 //     .on('error', util.log);
 // });
 
-// Minify HTML views
+// minify HTML views
 gulp.task('views', function() {
   return gulp.src(paths.views)
     .pipe(htmlify())
@@ -54,10 +44,9 @@ gulp.task('views', function() {
     .on('error', util.log);
 });
   
-// Minify and copy all JavaScript (except vendor scripts)
+// minify and copy non-vendor JavaScript
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-    // .pipe(coffee())
     .pipe(concat('all.js'))
     .pipe(gulp.dest(dest.scripts))
     .pipe(uglify())
@@ -66,10 +55,9 @@ gulp.task('scripts', function() {
     .on('error', util.log);
 });
   
-// Compile Less, autoprefix, and minify the resulting CSS
+// compile, autoprefix, and minify Less
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
-    // .pipe(changed(dest.styles)) // exclude unmodified files
     .pipe(less())
     // .pipe(autoprefixer())
     .pipe(gulp.dest(dest.styles))
@@ -79,20 +67,35 @@ gulp.task('styles', function () {
     .on('error', util.log);
 });
 
-// Copy all static assets
+// copy static assets
 gulp.task('statics', function() {
  return gulp.src(paths.statics)
-    // Pass in options to the task
     .pipe(gulp.dest(dest.statics))
     .on('error', util.log);
 });
+
+// copy static assets to root
+gulp.task('rootStatics', function() {
+ return gulp.src(paths.rootStatics)
+    .pipe(gulp.dest(dest.rootStatics))
+    .on('error', util.log);
+});
   
-// Rerun the task when a file changes
+// rerun tasks on file changes
 gulp.task('watch', function() {
   gulp.watch(paths.views, ['views']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(['source/styles/**/*.less'], ['styles']);
+  gulp.watch(paths.statics, ['statics']);
+  gulp.watch(paths.rootStatics, ['rootStatics']);
 });
 
-// The default task (called when you run `gulp` from cli)
-gulp.task('default', ['views', 'scripts', 'styles', 'statics', 'watch']);
+// default task
+gulp.task('default', [
+  'views',
+  'scripts',
+  'styles',
+  'statics',
+  'rootStatics',
+  'watch'
+]);
