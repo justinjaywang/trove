@@ -3,11 +3,7 @@
   top: 0;
   z-index: @zIndex-header;
   text-align: center;
-  background: rgba(0,0,0,.15); // TEMP
   width: @width--header;
-  // left: unit(((100 - unit(@width--container))/2), %);
-  // margin-left: auto;
-  // margin-right: auto;
   height: @height--header;
   color: @color--header;
 }
@@ -23,13 +19,12 @@
 }
 .header-item--menu {
   position: absolute;
+  padding-left: @space--headerItem-horizontal;
+  padding-right: @space--headerItem-horizontal;
   left: @space--headerItemMenu-left;
-  // text-transform: uppercase;
-  // font-weight: 600;
   &, &:hover {
     color: inherit;
   }
-  // line-height: @header-item-height;
 }
 .light {
   .header,
@@ -41,5 +36,5 @@
   }
 }
 .icon-nav {
-  font-size: @fontSize--icon-nav;
+  font-size: @fontSize--iconNav;
 }
