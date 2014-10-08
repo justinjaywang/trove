@@ -62,14 +62,9 @@
   font-size: @fontSize--navListItem;
 }
 .nav-list-item-header {
-  // text-transform: uppercase;
   padding: @space--navItemHeader-vertical @space--navItem-horizontal;
   margin: 0;
-  // letter-spacing: @letterSpacing-loose;
-  // font-weight: @fontWeight-semibold;
-  // font-size: @fontSize-small;
   cursor: default;
-  // TO DO: modularize this
 }
 .nav-list-link {
   color: @color--navListItem;
@@ -87,7 +82,8 @@
   .vertical-offset(@offset--navIcon);
 }
 .nav-icon--avatar {
-  .vertical-offset(-1px);
+  .vertical-offset(@offset--iconAvatar);
+  margin-right: @space--iconAvatar-right;
 }
 .nav-icon--avatar-image {
   border-radius: @size--avatar;

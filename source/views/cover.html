@@ -2,10 +2,18 @@
   <!-- <div class="cover-image" ng-style="{'background-image': getCoverImageUrl(parameters.coverImageUrl)}"></div> -->
   <div class="cover-image" ng-style="parameters.coverImageUrl != '' && {'background-image': 'url(' + parameters.coverImageUrl + ')'}"></div>
   <div class="cover-imageFader"></div>
-    <div class="cover-text u-alignBottom">
-      <div class="cover-text-inner container u-alignBlock">
+  <div class="cover-text u-alignBottom">
+    <div class="container--wide u-alignBlock">
+      <div class="cover-text-inner">
         <h1 class="cover-title">{{parameters.coverTitle}}</h1>
         <h4 class="cover-subtitle">{{parameters.coverSubtitle}}</h4>
+      </div>
+      <div class="navTabs">
+        <ul class="navTabs-list">
+          <li class="navTabs-item" ng-repeat="category in categories">
+            <a class="navTabs-anchor" ng-class="{active: isActive('/category/{{category._id}}')}" href="/category/{{category._id}}">{{category.display_name}}</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

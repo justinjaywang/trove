@@ -17,6 +17,7 @@ troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
     $scope.parameters.coverTitle = '';
     $scope.parameters.coverSubtitle = '';
     $scope.parameters.coverImageUrl = 'http://dummyimage.com/1x1/000/';
+    $scope.parameters.isProfile = false;
     $scope.parameters.isNavTransitioning = false;
     $scope.parameters.isNavOpen = false;
     // functions
@@ -54,8 +55,15 @@ troveControllers.controller('HeaderCtrl', ['$scope',
     };
   }]);
 
-troveControllers.controller('CoverCtrl', ['$scope',
-  function($scope) {
+troveControllers.controller('CoverCtrl', ['$scope', '$location', 'Category',
+  function($scope, $location, Category) {
+    $scope.categories = Category.query();
+    $scope.isActive = function(path) {
+      if (path == $location.path()) {
+        return true;
+      }
+      return false;
+    };
     // $scope.getCoverImageUrl = function(coverImageUrl) {
     //   if (coverImageUrl) {
     //     return 'url(\'' + coverImageUrl + '\')';
@@ -77,33 +85,34 @@ troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
     $scope.parameters.coverImageUrl = '';
   }]);
 
-troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
-  function($scope, $routeParams, Page, Item) {
-    $scope.item = Item.get({id: $routeParams.itemId}, function(item) {
-      $scope.item = item;
-      Page.setTitle(item.name + ' on Trove'); // TEMP
-    }, function(err) {
-      $scope.errorId = $routeParams.itemId;
-    });
-    $scope.parameters.titleColor = 'dark';
-    $scope.parameters.coverTitle = '';
-    $scope.parameters.coverSubtitle = '';
-    $scope.parameters.coverImageUrl = '';
-  }]);
-
 troveControllers.controller('CategoryCtrl', ['$scope', '$routeParams', '$filter', 'Page', 'Item', 'Category',
   function($scope, $routeParams, $filter, Page, Item, Category) {
     $scope.category = Category.get({id: $routeParams.categoryId}, function(category) {
       $scope.category = category;
-      $scope.parameters.coverTitle = category.display_name;
-      $scope.parameters.coverSubtitle = '';
+      // $scope.parameters.coverTitle = category.display_name;
+      $scope.parameters.coverTitle = 'Browse';
+      $scope.parameters.coverSubtitle = 'Discover products to collect';
       $scope.parameters.coverImageUrl = category.cover_image_url;
-      Page.setTitle(category.display_name + ' - Trove'); // TEMP
+      Page.setTitle('Trove — ' + category.display_name);
       Item.query().$promise.then(function(items) {
         $scope.categoryItems = $filter('filter')(items, { category_id: category._id });
       });
     });
     $scope.parameters.titleColor = 'light';
+  }]);
+
+troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
+  function($scope, $routeParams, Page, Item) {
+    $scope.item = Item.get({id: $routeParams.itemId}, function(item) {
+      $scope.item = item;
+      Page.setTitle(item.name + ' on Trove'); // TEMP
+      $scope.parameters.coverTitle = item.name;
+      $scope.parameters.coverSubtitle = item.description;
+    }, function(err) {
+      $scope.errorId = $routeParams.itemId;
+    });
+    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.coverImageUrl = '';
   }]);
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',

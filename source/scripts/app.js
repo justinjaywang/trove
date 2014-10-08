@@ -15,9 +15,12 @@ troveApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider.
+      // when('/', {
+      //   templateUrl: '/views/items.html',
+      //   controller: 'ItemsCtrl'
+      // }).
       when('/', {
-        templateUrl: '/views/items.html',
-        controller: 'ItemsCtrl'
+        redirectTo: '/category/bathroom'
       }).
       when('/item/:itemId', {
         templateUrl: '/views/item.html',
