@@ -1,6 +1,6 @@
 <div class="container container--wide">
   <!-- <h5>Number of items: {{categoryItems.length}}</h5> -->
-  <ul class="item-element-list grid-row">
-    <ng-include src="'/views/item-element.html'" ng-repeat="item in categoryItems" /></ng-include>
+  <ul class="itemElementList u-clearfix">
+    <ng-include src="'/views/item-element.html'" ng-repeat="item in categoryItems" class="itemElement"></ng-include>
   </ul>
 </div>

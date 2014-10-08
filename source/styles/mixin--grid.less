@@ -1,0 +1,4 @@
+// size item elements
+.makeItemElementWidth(@n) {
+  width: calc((100% / @n) ~" - " (@itemElement-gutter * (@n - 1) / @n));
+}

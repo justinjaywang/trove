@@ -1,9 +1,16 @@
+.mainContent {
+  margin: @space--mainContent-top 0;
+}
 .container {
   margin: 0 auto;
   width: @width--container;
-  background: @color--temp; // TEMP
 }
 .container--wide {
   width: @width--containerWide;
   max-width: @maxWidth--containerWide;
+}
+@media (max-width: @screen--sm-max) {
+  .container {
+    width: @width--container-sm;
+  }
 }

@@ -11,6 +11,13 @@
 .u-clearfix {
   .clearfix();
 }
+.u-clearfix:before, .u-clearfix:after {
+  display: table;
+  content: '';
+}
+.u-clearfix:after {
+  clear: both;
+}
 .u-autoWidth {
   width: auto !important;
 }

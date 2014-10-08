@@ -8,19 +8,21 @@
     width: 100%;
     padding-bottom: @aspect--cover;
   }
+  background: @color--temp !important; // TEMP
 }
 .cover.isImageless {
   .cover-image {
     display: none;
   }
-  height: @height--cover-imageless;
+  // height: @height--cover-imageless;
   background: rgba(0,0,0,0);
+  max-height: @maxHeight--cover-imageless;
   .cover-imageFader {
     display: none;
   }
-  &:before {
-    padding-bottom: 0;
-  }
+  // &:before {
+  //   padding-bottom: 10%;
+  // }
 }
 .cover.isTitleless {
   .cover-text {
@@ -64,10 +66,4 @@
   .cover-subtitle {
     color: @color--header-light;
   }
-}
-.cover-title {
-  margin-bottom: 0;
-}
-.cover-subtitle {
-  margin-top: 0;
 }

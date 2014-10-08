@@ -4,3 +4,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.line-clamp(@n: 1) {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @n;
+  -webkit-box-orient: vertical;
+  height: (@n * @fontSize-base * @lineHeight-base);
+}
