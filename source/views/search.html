@@ -1,3 +1,6 @@
-<div class="container container--wide">
-  <h5>this is the search</h5>
+<div class="container container--wide container--itemElementList">
+  <input class="searchInput" type="text" placeholder="Type to search" ng-model="searchText" />
+  <ul class="itemElementList u-clearfix">
+    <ng-include src="'/views/item-element.html'" ng-repeat="item in items | filter:searchText | limitTo: 12" class="itemElement"></ng-include>
+  </ul>
 </div>
