@@ -1,4 +1,13 @@
 <div class="container container--wide">
+  <div class="navTabs">
+    <ul class="navTabs-list">
+      <li class="navTabs-item" ng-repeat="browse in browseList">
+        <a class="navTabs-anchor" ng-class="{active: isActive('/browse/{{browse._id}}')}" href="/browse/{{browse._id}}">{{browse.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container container--wide container--itemElementList">
   <ul class="itemElementList u-clearfix">
     <ng-include src="'/views/item-element.html'" ng-repeat="item in browseItems" class="itemElement"></ng-include>
   </ul>

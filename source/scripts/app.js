@@ -11,38 +11,6 @@ var troveApp = angular.module('troveApp', [
   'troveServices'
 ]);
 
-// troveApp.config(['$routeProvider', '$locationProvider',
-//   function($routeProvider, $locationProvider) {
-//     $locationProvider.html5Mode(true);
-//     $routeProvider.
-//       // when('/', {
-//       //   templateUrl: '/views/items.html',
-//       //   controller: 'ItemsCtrl'
-//       // }).
-//       when('/', {
-//         redirectTo: '/category/bathroom'
-//       }).
-//       when('/item/:itemId', {
-//         templateUrl: '/views/item.html',
-//         controller: 'ItemCtrl'
-//       }).
-//       when('/category/:categoryId', {
-//         templateUrl: '/views/category.html',
-//         controller: 'CategoryCtrl'
-//       }).
-//       when('/about', {
-//         templateUrl: '/views/about.html',
-//         controller: 'AboutCtrl'
-//       }).
-//       when('/contact', {
-//         templateUrl: '/views/contact.html',
-//         controller: 'ContactCtrl'
-//       }).
-//       otherwise({
-//         redirectTo: '/'
-//       });
-//   }]);
-
 troveApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -50,17 +18,22 @@ troveApp.config(['$routeProvider', '$locationProvider',
       when('/', {
         redirectTo: '/browse/recommended'
       }).
-      when('/item/:itemId', {
-        templateUrl: '/views/item.html',
-        controller: 'ItemCtrl'
-      }).
-      // when('/category/:categoryId', {
-      //   templateUrl: '/views/category.html',
-      //   controller: 'CategoryCtrl'
-      // }).
+      
       when('/browse/:browseId', {
         templateUrl: '/views/browse.html',
         controller: 'BrowseCtrl'
+      }).
+      when('/search', {
+        templateUrl: '/views/search.html',
+        controller: 'SearchCtrl'
+      }).
+      when('/profile', {
+        templateUrl: '/views/profile.html',
+        controller: 'ProfileCtrl'
+      }).
+      when('/item/:itemId', {
+        templateUrl: '/views/item.html',
+        controller: 'ItemCtrl'
       }).
       when('/about', {
         templateUrl: '/views/about.html',
