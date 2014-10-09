@@ -105,7 +105,7 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
   function($scope, $routeParams, Page, Item) {
     $scope.item = Item.get({id: $routeParams.itemId}, function(item) {
       $scope.item = item;
-      Page.setTitle(item.name + ' on Trove'); // TEMP
+      Page.setTitle('Trove — ' + item.name);
       $scope.parameters.coverTitle = item.name;
       $scope.parameters.coverSubtitle = item.description;
     }, function(err) {
@@ -117,7 +117,7 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',
   function($scope, Page) {
-    Page.setTitle('About Trove'); // TEMP
+    Page.setTitle('Trove — About');
     $scope.parameters.coverTitle = 'About';
     $scope.parameters.coverSubtitle = 'Trove allows you to customize products';
     $scope.parameters.coverImageUrl = '';
