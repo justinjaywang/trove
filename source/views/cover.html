@@ -10,8 +10,8 @@
       </div>
       <div class="navTabs">
         <ul class="navTabs-list">
-          <li class="navTabs-item" ng-repeat="category in categories">
-            <a class="navTabs-anchor" ng-class="{active: isActive('/category/{{category._id}}')}" href="/category/{{category._id}}">{{category.display_name}}</a>
+          <li class="navTabs-item" ng-repeat="browse in browseItems">
+            <a class="navTabs-anchor" ng-class="{active: isActive('/browse/{{browse._id}}')}" href="/browse/{{browse._id}}">{{browse.title}}</a>
           </li>
         </ul>
       </div>
