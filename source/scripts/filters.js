@@ -1,6 +1,6 @@
 'use strict';
 
-/* Filters */
+// Filters
 
 var troveFilters = angular.module('troveFilters', []);
 

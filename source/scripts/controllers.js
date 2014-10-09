@@ -1,6 +1,6 @@
 'use strict';
 
-/* Controllers */
+// Controllers
 
 var troveControllers = angular.module('troveControllers', []);
 
@@ -64,13 +64,6 @@ troveControllers.controller('CoverCtrl', ['$scope', '$location', 'Browse',
       }
       return false;
     };
-    // $scope.getCoverImageUrl = function(coverImageUrl) {
-    //   if (coverImageUrl) {
-    //     return 'url(\'' + coverImageUrl + '\')';
-    //   } else {
-    //     return 'none';
-    //   }
-    // };
   }]);
 
 // troveControllers.controller('ItemsCtrl', ['$scope', 'Page', 'Item', 'Category',
@@ -109,7 +102,7 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$routeParams', '$filter', 
         $scope.browseItems = $filter('filter')(items, { browse_id: browse._id });
       });
     });
-    $scope.orderProp = 'id';
+    $scope.orderProp = '_id';
     $scope.parameters.titleColor = 'dark';
     $scope.parameters.coverTitle = 'Browse';
     $scope.parameters.coverSubtitle = 'Discover products to collect';

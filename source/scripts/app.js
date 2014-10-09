@@ -1,6 +1,6 @@
 'use strict';
 
-/* App Module */
+// App Module
 
 var troveApp = angular.module('troveApp', [
   'ngRoute',
