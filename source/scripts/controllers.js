@@ -82,14 +82,22 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
     };
   }]);
 
-troveControllers.controller('SearchCtrl', ['$scope',
-  function($scope) {
-
+troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
+  function($scope, Page, Item) {
+    Page.setTitle('Trove — Search');
+    $scope.parameters.coverTitle = 'Search';
+    $scope.parameters.coverSubtitle = '';
+    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.coverImageUrl = '';
   }]);
 
-troveControllers.controller('ProfileCtrl', ['$scope',
-  function($scope) {
-    
+troveControllers.controller('ProfileCtrl', ['$scope', 'Page', 'Item',
+  function($scope, Page, Item) {
+    Page.setTitle('Trove — ' + 'Justin Wang'); // TO DO: data-ize this
+    $scope.parameters.coverTitle = 'Justin Wang';
+    $scope.parameters.coverSubtitle = 'User Interface Designer';
+    $scope.parameters.titleColor = 'light';
+    $scope.parameters.coverImageUrl = 'http://placehold.it/1200x500';
   }]);
 
 troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
