@@ -35,3 +35,13 @@ troveServices.factory('Browse', ['$resource',
     );
     return Browse;
   }]);
+
+troveServices.factory('User', ['$resource',
+  function($resource) {
+    var User = $resource(databaseUrl + '/users/:id',
+      { apiKey: apiKey }, {
+        update: { method: 'PUT' }
+      }
+    );
+    return User;
+  }]);

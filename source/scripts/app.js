@@ -14,32 +14,36 @@ var troveApp = angular.module('troveApp', [
 troveApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.
-      when('/', {
-        redirectTo: '/browse/recommended'
-      }).
+    $routeProvider
+      .when('/', {
+        // redirectTo: '/browse/recommended'
+        redirectTo: '/@justinjaywang' // TEMP
+      })
       
-      when('/browse/:browseId', {
+      .when('/browse/:browseId', {
         templateUrl: '/views/browse.html',
         controller: 'BrowseCtrl'
-      }).
-      when('/search', {
+      })
+      .when('/search', {
         templateUrl: '/views/search.html',
         controller: 'SearchCtrl'
-      }).
-      when('/profile', {
-        templateUrl: '/views/profile.html',
-        controller: 'ProfileCtrl'
-      }).
-      when('/item/:itemId', {
+      })
+      .when('/@', {
+        redirectTo: '/@justinjaywang'
+      })
+      .when('/@:userId', {
+        templateUrl: '/views/user.html',
+        controller: 'UserCtrl'
+      })
+      .when('/item/:itemId', {
         templateUrl: '/views/item.html',
         controller: 'ItemCtrl'
-      }).
-      when('/about', {
+      })
+      .when('/about', {
         templateUrl: '/views/about.html',
         controller: 'AboutCtrl'
-      }).
-      otherwise({
+      })
+      .otherwise({
         redirectTo: '/'
       });
   }]);

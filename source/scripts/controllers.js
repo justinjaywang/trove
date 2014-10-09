@@ -16,8 +16,8 @@ troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
     $scope.parameters.titleColor = 'dark';
     $scope.parameters.coverTitle = '';
     $scope.parameters.coverSubtitle = '';
-    $scope.parameters.coverImageUrl = 'http://dummyimage.com/1x1/000/';
-    $scope.parameters.isProfile = false;
+    $scope.parameters.coverImageUrl = '';
+    $scope.parameters.coverAvatarUrl = '';
     $scope.parameters.isNavTransitioning = false;
     $scope.parameters.isNavOpen = false;
     // functions
@@ -74,6 +74,7 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
     $scope.parameters.coverTitle = 'Browse';
     $scope.parameters.coverSubtitle = 'Discover products to collect';
     $scope.parameters.coverImageUrl = '';
+    $scope.parameters.coverAvatarUrl = '';
     $scope.isActive = function(path) {
       if (path == $location.path()) {
         return true;
@@ -89,15 +90,25 @@ troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
     $scope.parameters.coverSubtitle = '';
     $scope.parameters.titleColor = 'dark';
     $scope.parameters.coverImageUrl = '';
+    $scope.parameters.coverAvatarUrl = '';
   }]);
 
-troveControllers.controller('ProfileCtrl', ['$scope', 'Page', 'Item',
-  function($scope, Page, Item) {
-    Page.setTitle('Trove — ' + 'Justin Wang'); // TO DO: data-ize this
-    $scope.parameters.coverTitle = 'Justin Wang';
-    $scope.parameters.coverSubtitle = 'User Interface Designer';
+troveControllers.controller('UserCtrl', ['$scope', '$routeParams', '$filter', 'Page', 'Item', 'User',
+  function($scope, $routeParams, $filter, Page, Item, User) {
+    $scope.user = User.get({id: $routeParams.userId}, function(user) {
+      $scope.user = user;
+      Page.setTitle('Trove — ' + user.name);
+      $scope.parameters.coverTitle = user.name;
+      $scope.parameters.coverSubtitle = user.about;
+      $scope.parameters.coverImageUrl = user.cover_image_url;
+      $scope.parameters.coverAvatarUrl = user.avatar_url;
+      Item.query().$promise.then(function(items) {
+        $scope.userItems = $filter('filter')(items, { mine: true });
+      });
+    }, function(err) {
+      $scope.errorId = $routeParams.userId;
+    });
     $scope.parameters.titleColor = 'light';
-    $scope.parameters.coverImageUrl = 'http://placehold.it/1200x500';
   }]);
 
 troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
@@ -118,7 +129,7 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
   function($scope, Page) {
     Page.setTitle('Trove — About');
     $scope.parameters.coverTitle = 'About';
-    $scope.parameters.coverSubtitle = 'Trove allows you to customize products';
+    $scope.parameters.coverSubtitle = 'Discover and personalize products';
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.titleColor = 'dark';
   }]);
