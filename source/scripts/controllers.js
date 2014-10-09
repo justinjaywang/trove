@@ -8,8 +8,8 @@ var troveControllers = angular.module('troveControllers', []);
 //   function($scope) {
 //   }]);
 
-troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
-  function($scope, $timeout, Page) {
+troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Page',
+  function($scope, $location, $timeout, Page) {
     $scope.Page = Page;
     // defaults
     $scope.parameters = {};
@@ -26,6 +26,13 @@ troveControllers.controller('TitleCtrl', ['$scope', '$timeout', 'Page',
       $timeout(function() {
         $scope.parameters.isNavTransitioning = false;
       }, 200);
+    };
+    $scope.parameters.isActive = function(path) {
+      if ($location.path().indexOf(path) >= 0) {
+        return true;
+      } else {
+        return false;
+      }
     };
     // $scope.$on('$routeChangeStart', function(next, current) { 
     //   console.log('route change start')
@@ -57,6 +64,12 @@ troveControllers.controller('HeaderCtrl', ['$scope',
 
 troveControllers.controller('CoverCtrl', ['$scope',
   function($scope) {
+
+  }]);
+
+troveControllers.controller('SubcoverCtrl', ['$scope',
+  function($scope) {
+
   }]);
 
 troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams', '$filter', 'Page', 'Item', 'Browse',
@@ -75,7 +88,7 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
     $scope.parameters.coverSubtitle = 'Discover products to collect';
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.coverAvatarUrl = '';
-    $scope.isActive = function(path) {
+    $scope.isActiveNavTab = function(path) {
       if (path == $location.path()) {
         return true;
       }

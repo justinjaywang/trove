@@ -16,10 +16,9 @@ troveApp.config(['$routeProvider', '$locationProvider',
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
-        // redirectTo: '/browse/recommended'
-        redirectTo: '/@justinjaywang' // TEMP
+        redirectTo: '/browse/recommended'
+        // redirectTo: '/@justinjaywang' // TEMP
       })
-      
       .when('/browse/:browseId', {
         templateUrl: '/views/browse.html',
         controller: 'BrowseCtrl'

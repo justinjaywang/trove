@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/assets/all.css"><!-- TO DO: switch to minified version -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
-<body ng-class="{isNavTransitioning: parameters.isNavTransitioning, isNavOpen: parameters.isNavOpen}">
+<body ng-class="{isNavTransitioning: parameters.isNavTransitioning, isNavOpen: parameters.isNavOpen, isBrowseView: parameters.isActive('/browse'), isSearchView: parameters.isActive('/search'), isUserView: parameters.isActive('/@'), isItemView: parameters.isActive('/item')}">
 
   <ng-include src="'/views/nav.html'" ng-controller="NavCtrl"></ng-include>
 

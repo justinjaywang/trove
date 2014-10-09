@@ -1,24 +1,11 @@
 .cover {
   position: relative;
   height: @height--cover;
+  background: @color--temp;
   &:before {
     content: '';
     display: block;
     width: 100%;
-    // padding-bottom: @aspect--cover;
-  }
-}
-.cover.isImageless {
-  .cover-image {
-    display: none;
-  }
-  background: rgba(0,0,0,0);
-  height: @height--cover-imageless;
-  .cover-imageFader {
-    display: none;
-  }
-  &:before {
-    padding-bottom: 0;
   }
 }
 @media (max-width: @screen--sm-max) {
@@ -27,11 +14,16 @@
     height: @height--cover-sm;
   }
 }
-.cover.isTitleless {
-  .cover-text {
+.cover.isImageless {
+  .cover-image,
+  .cover-imageFader {
     display: none;
   }
-  .cover-imageFader {
+  // background: rgba(0,0,0,0); // TEMP
+  height: @height--cover-imageless;
+}
+.cover.isTitleless {
+  .cover-title {
     display: none;
   }
 }
@@ -40,11 +32,8 @@
     display: none;
   }
 }
-.cover-text {
+.cover-content {
   text-align: center;
-}
-.cover-text-inner {
-  margin-bottom: @space--cover-text-bottom;
 }
 .cover-image {
   background-color: @color--coverBg;
@@ -52,11 +41,11 @@
   background-position: center;
 }
 .cover-imageFader {
-  background: rgba(0,0,0,0.4);
+  background: @color--imageFaderBg;
 }
 .cover-image,
 .cover-imageFader,
-.cover-text {
+.cover-content {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -64,4 +53,11 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+.isSearchView,
+.isBrowseView,
+.isItemView {
+  .cover-avatar {
+    display: none;
+  }
 }
