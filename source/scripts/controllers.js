@@ -100,11 +100,9 @@ troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
     $scope.parameters.coverAvatarUrl = '';
     $scope.parameters.subcoverContent = '';
     $scope.minEntryFn = function(items) {
-      // console.log(s)
       var s = $scope.searchText;
       if (typeof s === 'undefined') return false;
-      s = s.title;
-      if (s.length < 1) return false;
+      if (s.title.length < 1) return false;
       return true;
     };
   }]);

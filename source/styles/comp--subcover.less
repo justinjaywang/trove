@@ -41,9 +41,13 @@
 .light {
   .subcover {
     color: @color--header-light;
-    .box-shadow(inset 0 1px fade(@color--header-light, @opacityPercentage--subcover-inactive));
+    .box-shadow(inset 0 1px fade(@color--header-light, @opacityPercentage--subcover-inactive-light));
   }
   .subcover-anchor.active {
     border-color: @color--header-light;
+  }
+  .subcover-static-text,
+  .subcover-anchor {
+    opacity: @opacity--subcover-inactive-light;
   }
 }

@@ -4,18 +4,14 @@
 
 var troveFilters = angular.module('troveFilters', []);
 
-// troveFilters.filter('categoryFilter', function() {
-//   return function(itemsArray, category) {
-//     // console.log(item)
-//     return true;
-//   };
-// });
-
-// troveFilters.filter('searchFilter', function() {
-//   return function(items, searchText) {
-//     console.log(searchText)
-//     // if (searchText == '*') {
-//       return true;
-//     // }
-//   }
-// });
+troveFilters.filter('numResultsFilter', function() {
+  return function(n) {
+    if (n == 0) {
+      return 'No results';
+    } else if (n == 1) {
+      return '1 result';
+    } else {
+      return n + ' results';
+    }
+  }; 
+});
