@@ -16,9 +16,19 @@
   height: @height--cover-imageless;
   padding-bottom: @space--coverHeader-top;
 }
+.isSearchView {
+  .mainContent {
+    .vertical-offset(-@height--cover-imageless);
+  }
+}
 @media (max-width: @screen--sm-max) {
   .searchInput {
     height: @height--cover-imageless-sm
+  }
+  .isSearchView {
+    .mainContent {
+      .vertical-offset(-@height--cover-imageless-sm);
+    }
   }
 }
 .placeholder(@color--searchPlaceholder);

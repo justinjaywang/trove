@@ -5,7 +5,7 @@
     </li>
   </ul>
   <div class="container container--wide container--itemElementList">
-    <ul class="itemElementList u-clearfix">
+    <ul class="itemElementList u-clearfix" ng-show="parameters.coverTitle" ng-animate-children>
       <ng-include src="'/views/item-element.html'" ng-repeat="item in browseItems" class="itemElement"></ng-include>
     </ul>
   </div>

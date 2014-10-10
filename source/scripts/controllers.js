@@ -11,16 +11,19 @@ var troveControllers = angular.module('troveControllers', []);
 troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Page',
   function($scope, $location, $timeout, Page) {
     $scope.Page = Page;
-    // defaults
     $scope.parameters = {};
-    $scope.parameters.isLight = false;
-    $scope.parameters.coverTitle = '';
-    $scope.parameters.coverSubtitle = '';
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.coverAvatarUrl = '';
-    $scope.parameters.subcoverContent = '';
+    // defaults
+    $scope.parameters.resetParameters = function() {
+      $scope.parameters.isLight = false;
+      $scope.parameters.coverTitle = '';
+      $scope.parameters.coverSubtitle = '';
+      $scope.parameters.coverImageUrl = '';
+      $scope.parameters.coverAvatarUrl = '';
+      $scope.parameters.subcoverContent = '';
+    }
     $scope.parameters.isNavTransitioning = false;
     $scope.parameters.isNavOpen = false;
+    $scope.parameters.resetParameters();
     // functions
     $scope.parameters.closeNav =  function() {
       $scope.parameters.isNavOpen = false;
@@ -35,12 +38,16 @@ troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Pa
         return false;
       }
     };
-    // $scope.$on('$routeChangeStart', function(next, current) { 
-    //   console.log('route change start')
-    // });
+    $scope.$on('$routeChangeStart', function(next, current) { 
+      // console.log('route change start')
+      $scope.parameters.resetParameters();
+    });
     $scope.$on('$routeChangeSuccess', function(next, current) {
       // console.log('route change success')
-      $scope.parameters.closeNav();
+      // $scope.parameters.closeNav();
+      $timeout(function() {
+        $scope.parameters.closeNav();
+      }, 200);
     });
   }]);
 
@@ -79,23 +86,13 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
         $scope.browseItems = $filter('filter')(items, { browse_id: browseCategory._id });
       });
     });
-    $scope.parameters.isLight = false;
     $scope.parameters.coverTitle = 'Browse';
-    $scope.parameters.coverSubtitle = '';
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.coverAvatarUrl = '';
   }]);
 
 troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
   function($scope, Page, Item) {
     Page.setTitle('Trove — Search');
     $scope.items = Item.query();
-    $scope.parameters.coverTitle = '';
-    $scope.parameters.coverSubtitle = '';
-    $scope.parameters.isLight = false;
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.coverAvatarUrl = '';
-    $scope.parameters.subcoverContent = '';
     $scope.minEntryFn = function(items) {
       var s = $scope.searchText;
       if (typeof s === 'undefined') return false;
@@ -133,9 +130,6 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
     }, function(err) {
       $scope.errorId = $routeParams.itemId;
     });
-    $scope.parameters.isLight = false;
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.subcoverContent = '';
   }]);
 
 troveControllers.controller('AboutCtrl', ['$scope', 'Page',
@@ -143,6 +137,4 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
     Page.setTitle('Trove — About');
     $scope.parameters.coverTitle = 'About';
     $scope.parameters.coverSubtitle = 'Discover and personalize everyday goods';
-    $scope.parameters.coverImageUrl = '';
-    $scope.parameters.isLight = false;
   }]);

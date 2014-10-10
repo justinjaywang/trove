@@ -2,7 +2,7 @@
   <input class="searchInput" type="text" placeholder="Search" ng-model="searchText.title" autofocus/>
 </div>
 <div class="offsetContent">
-  <div class="container container--wide subcover subcover--searchResults" ng-show="searchText.title">
+  <div class="container container--wide subcover subcover--searchResults" ng-show="(searchText.title.length > 0)">
     <span class="subcover-static">{{filteredItems.length | numResultsFilter}}</span>
   </div>
   <div class="container container--wide subcover subcover--searchInstructions" ng-show="!searchText.title">

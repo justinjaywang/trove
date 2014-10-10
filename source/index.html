@@ -13,14 +13,14 @@
   <ng-include src="'/views/nav.html'" ng-controller="NavCtrl"></ng-include>
 
   <div class="surfaceContainer">
-    <ng-include src="'/views/header.html'" ng-controller="HeaderCtrl"></ng-include>
-    <ng-include src="'/views/cover.html'" ng-controller="CoverCtrl"></ng-include>
+    <ng-include src="'/views/header.html'" ng-controller="HeaderCtrl" class="headerWrapper"></ng-include>
+    <ng-include src="'/views/cover.html'" ng-controller="CoverCtrl" class="coverWrapper"></ng-include>
     <main ng-view class="mainContent"></main>
   </div>
 
   <script src="/assets/lib/jquery/dist/jquery.js"></script>
   <script src="/assets/lib/angular/angular.js"></script>
-  <!-- <script src="/assets/lib/angular-animate/angular-animate.js"></script>--><!-- TO DO: switch to minified version -->
+  <script src="/assets/lib/angular-animate/angular-animate.js"></script><!-- TO DO: switch to minified version -->
   <script src="/assets/lib/angular-route/angular-route.js"></script>
   <script src="/assets/lib/angular-resource/angular-resource.js"></script>
 

@@ -7,11 +7,6 @@
     width: 100%;
   }
 }
-.isSearchView {
-  .cover {
-    display: none;
-  }
-}
 @media (max-width: @screen--sm-max) {
   .cover,
   .cover.isImageless {
@@ -19,17 +14,8 @@
   }
 }
 .cover.isImageless {
-  .cover-image,
-  .cover-imageFader {
-    display: none;
-  }
   background: rgba(0,0,0,0);
   height: @height--cover-imageless;
-}
-.cover.isTitleless {
-  .cover-title {
-    display: none;
-  }
 }
 .cover-content {
   text-align: center;

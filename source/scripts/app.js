@@ -4,6 +4,7 @@
 
 var troveApp = angular.module('troveApp', [
   'ngRoute',
+  'ngAnimate',
   // 'troveAnimations',
   'troveControllers',
   // 'troveDirectives',
