@@ -13,16 +13,33 @@
   font-size: @fontSize--searchInput;
   font-weight: @fontWeight--searchInput;
   text-align: center;
+  height: @height--cover-imageless;
+  padding-bottom: @space--coverHeader-bottom;
+  // border-bottom: 1px solid rgba(0,0,0,0.4);
+  background: #eee; // TEMP
+}
+@media (max-width: @screen--sm-max) {
+  .searchInput {
+    height: @height--cover-imageless-sm
+  }
 }
 ::-webkit-input-placeholder {
   color: @color--searchPlaceholder;
+  .font-smoothing(inherit);
+  text-rendering: inherit;
 }
 input:-moz-placeholder {
-  color: @color--searchPlaceholder;  
+  color: @color--searchPlaceholder;
+  .font-smoothing(inherit);
+  text-rendering: inherit;
 }
 input::-moz-placeholder {
-  color: @color--searchPlaceholder;  
+  color: @color--searchPlaceholder;
+  .font-smoothing(inherit);
+  text-rendering: inherit;
 }
 :-ms-input-placeholder {  
-  color: @color--searchPlaceholder;  
+  color: @color--searchPlaceholder;
+  .font-smoothing(inherit);
+  text-rendering: inherit;
 }
