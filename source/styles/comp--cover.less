@@ -31,18 +31,11 @@
     display: none;
   }
 }
-.cover.isSubtitleless {
-  .cover-subtitle {
-    display: none;
-  }
-}
 .cover-content {
   text-align: center;
 }
-.isImageless {
-  .cover-header {
-    margin-bottom: @space--coverHeader-bottom;
-  }  
+.cover-header {
+  margin-bottom: 1rem;
 }
 .cover-image {
   background-color: @color--coverBg;
@@ -67,6 +60,7 @@
   height: @height--coverAvatar;
   border-radius: (@height--coverAvatar / 2);
   margin-bottom: @space--coverAvatar-bottom;
+  margin-top: 1rem;
 }
 .isSearchView,
 .isBrowseView,
@@ -75,7 +69,7 @@
     display: none;
   }
 }
-.light {
+.isLight {
   .cover-title,
   .cover-subtitle {
     color: @color--header-light;

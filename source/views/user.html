@@ -1,5 +1,10 @@
-<div class="container container--wide container--itemElementList">
-  <ul class="itemElementList u-clearfix">
-    <ng-include src="'/views/item-element.html'" ng-repeat="item in userItems" class="itemElement"></ng-include>
-  </ul>
+<div class="offsetContent">
+  <div class="container container--wide subcover">
+    <span class="subcover-static">{{parameters.subcoverContent}}</span>
+  </div>
+  <div class="container container--wide container--itemElementList">
+    <ul class="itemElementList u-clearfix">
+      <ng-include src="'/views/item-element.html'" ng-repeat="item in userItems" class="itemElement"></ng-include>
+    </ul>
+  </div>
 </div>

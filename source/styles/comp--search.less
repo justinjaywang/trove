@@ -14,9 +14,7 @@
   font-weight: @fontWeight--searchInput;
   text-align: center;
   height: @height--cover-imageless;
-  padding-bottom: @space--coverHeader-bottom;
-  // border-bottom: 1px solid rgba(0,0,0,0.4);
-  background: #eee; // TEMP
+  padding-bottom: 1rem;
 }
 @media (max-width: @screen--sm-max) {
   .searchInput {
@@ -24,6 +22,9 @@
   }
 }
 .placeholder(@color--searchPlaceholder);
-.isEmptySearch {
+.subcover--searchResults.isEmptySearch {
+  display: none;
+}
+.subcover--searchInstructions.isNotEmptySearch {
   display: none;
 }

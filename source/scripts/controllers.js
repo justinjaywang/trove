@@ -13,7 +13,7 @@ troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Pa
     $scope.Page = Page;
     // defaults
     $scope.parameters = {};
-    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.isLight = false;
     $scope.parameters.coverTitle = '';
     $scope.parameters.coverSubtitle = '';
     $scope.parameters.coverImageUrl = '';
@@ -67,10 +67,6 @@ troveControllers.controller('CoverCtrl', ['$scope',
   function($scope) {
   }]);
 
-troveControllers.controller('SubcoverCtrl', ['$scope',
-  function($scope) {
-  }]);
-
 troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams', '$filter', 'Page', 'Item', 'Browse',
   function($scope, $location, $routeParams, $filter, Page, Item, Browse) {
     $scope.browseList = Browse.query();
@@ -82,9 +78,9 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
         $scope.browseItems = $filter('filter')(items, { browse_id: browseCategory._id });
       });
     });
-    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.isLight = false;
     $scope.parameters.coverTitle = 'Browse';
-    $scope.parameters.coverSubtitle = 'Discover products to collect';
+    $scope.parameters.coverSubtitle = '';
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.coverAvatarUrl = '';
   }]);
@@ -95,7 +91,7 @@ troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
     $scope.items = Item.query();
     $scope.parameters.coverTitle = '';
     $scope.parameters.coverSubtitle = '';
-    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.isLight = false;
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.coverAvatarUrl = '';
     $scope.parameters.subcoverContent = '';
@@ -123,7 +119,7 @@ troveControllers.controller('UserCtrl', ['$scope', '$routeParams', '$filter', 'P
     }, function(err) {
       $scope.errorId = $routeParams.userId;
     });
-    $scope.parameters.titleColor = 'light';
+    $scope.parameters.isLight = true;
   }]);
 
 troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item',
@@ -136,7 +132,7 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
     }, function(err) {
       $scope.errorId = $routeParams.itemId;
     });
-    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.isLight = false;
     $scope.parameters.coverImageUrl = '';
     $scope.parameters.subcoverContent = '';
   }]);
@@ -147,5 +143,5 @@ troveControllers.controller('AboutCtrl', ['$scope', 'Page',
     $scope.parameters.coverTitle = 'About';
     $scope.parameters.coverSubtitle = 'Discover and personalize everyday goods';
     $scope.parameters.coverImageUrl = '';
-    $scope.parameters.titleColor = 'dark';
+    $scope.parameters.isLight = false;
   }]);
