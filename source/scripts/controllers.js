@@ -38,7 +38,8 @@ troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Pa
     // $scope.$on('$routeChangeStart', function(next, current) { 
     //   console.log('route change start')
     // });
-    $scope.$on('$routeChangeSuccess', function(next, current) { 
+    $scope.$on('$routeChangeSuccess', function(next, current) {
+      // console.log('route change success')
       $scope.parameters.closeNav();
     });
   }]);
@@ -128,7 +129,7 @@ troveControllers.controller('ItemCtrl', ['$scope', '$routeParams', 'Page', 'Item
       $scope.item = item;
       Page.setTitle('Trove — ' + item.title);
       $scope.parameters.coverTitle = item.title;
-      $scope.parameters.coverSubtitle = item.subtitle;
+      $scope.parameters.coverSubtitle = '';
     }, function(err) {
       $scope.errorId = $routeParams.itemId;
     });
