@@ -6,12 +6,13 @@
 @color-grayLight:    rgb(153,153,153); // #999
 @color-grayLighter:  rgb(243,243,243); // #f3f3f3
 @color-grayLightest: rgb(255,255,255);
+@color-fadedBlack:   rgba(0,0,0,0.3);
 
 // applications
-@color--bodyBg:            @color-grayLightest; // TEMP
+@color--bodyBg:            @color-grayLightest;
 @color--body:              @color-grayDarker;
-@color--link:              @color-grayDarker; // TEMP
-@color--linkHover:         darken(@color--link, 15%); // TEMP
+@color--link:              @color-grayDarker;
+@color--linkHover:         darken(@color--link, 15%);
 @color--headings:          @color-grayDarker;
 @color--navBg:             @color-grayDarkest;
 @color--nav:               @color-grayLightest;
@@ -22,6 +23,6 @@
 @color--header-light:      @color-grayLightest;
 @color--headerLogo-light:  @color-grayLightest;
 @color--coverBg:           @color-grayDarker;
-@color--imageFaderBg:      rgba(0,0,0,0.3);
-@color--searchPlaceholder: rgba(0,0,0,0.3);
+@color--imageFaderBg:      @color-fadedBlack;
+@color--searchPlaceholder: @color-fadedBlack;
 @color--temp:              rgba(86,61,124,.15);
