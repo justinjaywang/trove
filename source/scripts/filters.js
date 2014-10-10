@@ -10,3 +10,12 @@ var troveFilters = angular.module('troveFilters', []);
 //     return true;
 //   };
 // });
+
+// troveFilters.filter('searchFilter', function() {
+//   return function(items, searchText) {
+//     console.log(searchText)
+//     // if (searchText == '*') {
+//       return true;
+//     // }
+//   }
+// });

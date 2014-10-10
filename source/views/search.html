@@ -1,6 +1,8 @@
+<div class="container container--wide">
+  <input class="searchInput" type="text" placeholder="Start typing" ng-model="searchText.title" autofocus/>
+</div>
 <div class="container container--wide container--itemElementList">
-  <input class="searchInput" type="text" placeholder="Type to search" ng-model="searchText" />
   <ul class="itemElementList u-clearfix">
-    <ng-include src="'/views/item-element.html'" ng-repeat="item in items | filter:searchText | limitTo: 12" class="itemElement"></ng-include>
+    <ng-include src="'/views/item-element.html'" ng-repeat="item in items | filter:searchText | filter:minEntryFn | limitTo:12" class="itemElement"></ng-include>
   </ul>
 </div>

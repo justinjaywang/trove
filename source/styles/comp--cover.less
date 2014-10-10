@@ -8,10 +8,16 @@
     width: 100%;
   }
 }
+.isSearchView .cover.IsImageless {
+  height: @height--header;
+}
 @media (max-width: @screen--sm-max) {
   .cover,
   .cover.isImageless {
     height: @height--cover-sm;
+  }
+  .isSearchView .cover.IsImageless {
+    height: @height--header-sm;
   }
 }
 .cover.isImageless {
@@ -34,6 +40,9 @@
 }
 .cover-content {
   text-align: center;
+}
+.cover-header {
+  margin-bottom: @space--coverHeader-bottom;
 }
 .cover-image {
   background-color: @color--coverBg;

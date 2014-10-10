@@ -1,0 +1,28 @@
+.searchInput {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  .font-smoothing(inherit);
+  text-rendering: inherit;
+  background: inherit;
+  font-size: @fontSize--searchInput;
+  font-weight: @fontWeight--searchInput;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  color: @color--searchPlaceholder;
+}
+input:-moz-placeholder {
+  color: @color--searchPlaceholder;  
+}
+input::-moz-placeholder {
+  color: @color--searchPlaceholder;  
+}
+:-ms-input-placeholder {  
+  color: @color--searchPlaceholder;  
+}
