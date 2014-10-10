@@ -2,10 +2,10 @@
   <input class="searchInput" type="text" placeholder="Search" ng-model="searchText.title" autofocus/>
 </div>
 <div class="offsetContent">
-  <div class="container container--wide subcover subcover--searchResults" ng-class="{isEmptySearch: !searchText.title}">
+  <div class="container container--wide subcover subcover--searchResults" ng-show="searchText.title">
     <span class="subcover-static">{{filteredItems.length | numResultsFilter}}</span>
   </div>
-  <div class="container container--wide subcover subcover--searchInstructions" ng-class="{isNotEmptySearch: searchText.title}">
+  <div class="container container--wide subcover subcover--searchInstructions" ng-show="!searchText.title">
     <span class="subcover-static">Type above to search</span>
   </div>
   <div class="container container--wide container--itemElementList">
