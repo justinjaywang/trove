@@ -1,9 +1,4 @@
 <div class="offsetContent">
-  <!-- <ul class="container container--wide subcover subcover--list" ng-show="!!parameters.subcoverContent">
-    <li class="subcover-item" ng-repeat="browseCategory in parameters.subcoverContent">
-      <a class="subcover-anchor" ng-class="{active: parameters.isActive('/browse/{{browseCategory._id}}')}" href="/browse/{{browseCategory._id}}">{{browseCategory.title}}</a>
-    </li>
-  </ul> -->
   <div class="container container--wide container--itemElementList">
     <ul class="itemElementList u-clearfix" ng-show="parameters.coverTitle" ng-animate-children>
       <ng-include src="'/views/item-element.html'" ng-repeat="item in browseItems" class="itemElement"></ng-include>

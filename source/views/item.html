@@ -1,5 +1,5 @@
 <div class="offsetContent">
-  <div class="container itemDetail" ng-show="item.image_url">
+  <div class="container itemDetail" ng-show="(item.image_url && parameters.coverTitle)">
     <div class="itemDetail-imageWrapper">
       <img ng-src="{{item.image_url}}" class="itemDetail-image" />
     </div>
