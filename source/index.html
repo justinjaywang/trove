@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="en" ng-app="troveApp" ng-controller="TitleCtrl">
 <head>
+  <base href="/">
+  <!-- <base href="/trove/"> -->
   <meta charset="utf-8">
   <title ng-bind="Page.title()"></title>
   <meta name="description" content="Discover and personalize everyday goods">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-  <link rel="stylesheet" href="/assets/all.css"><!-- TO DO: switch to minified version -->
+  <link rel="stylesheet" href="assets/all.min.css">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
-<body ng-class="{isLight: parameters.isLight, isNavTransitioning: parameters.isNavTransitioning, isNavOpen: parameters.isNavOpen, isBrowseView: parameters.isActive('/browse'), isSearchView: parameters.isActive('/search'), isUserView: parameters.isActive('/@'), isItemView: parameters.isActive('/item')}">
+<body ng-class="{isLight: parameters.isLight, isNavTransitioning: parameters.isNavTransitioning, isNavOpen: parameters.isNavOpen, isBrowseView: parameters.isActive('browse'), isSearchView: parameters.isActive('search'), isUserView: parameters.isActive('@'), isItemView: parameters.isActive('item')}">
 
-  <ng-include src="'/views/nav.html'" ng-controller="NavCtrl"></ng-include>
+  <ng-include src="'views/nav.html'" ng-controller="NavCtrl"></ng-include>
 
   <div class="surfaceContainer">
-    <ng-include src="'/views/header.html'" ng-controller="HeaderCtrl"></ng-include>
-    <ng-include src="'/views/cover.html'" ng-controller="CoverCtrl"></ng-include>
-    <ng-include ng-if="parameters.isActive('/browse')" src="'/views/subcover-browse.html'" ng-controller="SubcoverCtrl" class="subcoverBrowse"></ng-include>
+    <ng-include src="'views/header.html'" ng-controller="HeaderCtrl"></ng-include>
+    <ng-include src="'views/cover.html'" ng-controller="CoverCtrl"></ng-include>
+    <ng-include ng-if="parameters.isActive('browse')" src="'views/subcover-browse.html'" ng-controller="SubcoverCtrl" class="subcoverBrowse"></ng-include>
     <main ng-view class="mainContent"></main>
   </div>
 
-  <script src="/assets/lib/jquery/dist/jquery.js"></script>
-  <script src="/assets/lib/angular/angular.js"></script>
-  <script src="/assets/lib/angular-animate/angular-animate.js"></script><!-- TO DO: switch to minified version -->
-  <script src="/assets/lib/angular-route/angular-route.js"></script>
-  <script src="/assets/lib/angular-resource/angular-resource.js"></script>
-
-  <script src="/assets/all.js"></script><!-- TO DO: switch to minified version -->
+  <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+  <script src="assets/lib/angular/angular.min.js"></script>
+  <script src="assets/lib/angular-animate/angular-animate.min.js"></script>
+  <script src="assets/lib/angular-route/angular-route.min.js"></script>
+  <script src="assets/lib/angular-resource/angular-resource.min.js"></script>
+  <script src="assets/all.min.js"></script>
 
 </body>
 </html>
