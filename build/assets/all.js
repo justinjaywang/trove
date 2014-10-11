@@ -18,30 +18,30 @@ troveApp.config(['$routeProvider', '$locationProvider',
     $routeProvider
       .when('/', {
         redirectTo: '/browse/recommended'
-        // redirectTo: '/@justinjaywang' // TEMP
+        // redirectTo: '/@justinjaywang'
         // redirectTo: '/search'
       })
       .when('/browse/:browseId', {
-        templateUrl: '/views/browse.html',
+        templateUrl: 'views/browse.html',
         controller: 'BrowseCtrl'
       })
       .when('/search', {
-        templateUrl: '/views/search.html',
+        templateUrl: 'views/search.html',
         controller: 'SearchCtrl'
       })
       .when('/@', {
         redirectTo: '/@justinjaywang'
       })
       .when('/@:userId', {
-        templateUrl: '/views/user.html',
+        templateUrl: 'views/user.html',
         controller: 'UserCtrl'
       })
       .when('/item/:itemId', {
-        templateUrl: '/views/item.html',
+        templateUrl: 'views/item.html',
         controller: 'ItemCtrl'
       })
       .when('/about', {
-        templateUrl: '/views/about.html',
+        templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
       .otherwise({
