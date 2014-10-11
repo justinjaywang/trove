@@ -22,5 +22,5 @@ Thumbs.db
 
 archive
 data
-build
+# build
 node_modules
