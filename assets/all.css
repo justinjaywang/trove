@@ -352,8 +352,8 @@ th {
 }
 @font-face {
   font-family: 'icons';
-  src: url('/assets/icons.eot?eupk9e');
-  src: url('/assets/icons.eot?#iefixeupk9e') format('embedded-opentype'), url('/assets/icons.woff?eupk9e') format('woff'), url('/assets/icons.ttf?eupk9e') format('truetype'), url('/assets/icons.svg?eupk9e#icons') format('svg');
+  src: url('icons.eot?eupk9e');
+  src: url('icons.eot?#iefixeupk9e') format('embedded-opentype'), url('icons.woff?eupk9e') format('woff'), url('icons.ttf?eupk9e') format('truetype'), url('icons.svg?eupk9e#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
