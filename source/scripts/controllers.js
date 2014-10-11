@@ -38,16 +38,14 @@ troveControllers.controller('TitleCtrl', ['$scope', '$location', '$timeout', 'Pa
         return false;
       }
     };
-    $scope.$on('$routeChangeStart', function(next, current) { 
-      // console.log('route change start')
+    $scope.$on('$routeChangeStart', function(event, next, current) {
+      if (typeof next === 'undefined') return;
+      if (typeof current === 'undefined') return;
+      if (next.templateUrl == current.loadedTemplateUrl) return; // same template, no need to reset params
       $scope.parameters.resetParameters();
     });
-    $scope.$on('$routeChangeSuccess', function(next, current) {
-      // console.log('route change success')
-      // $scope.parameters.closeNav();
-      $timeout(function() {
-        $scope.parameters.closeNav();
-      }, 200);
+    $scope.$on('$routeChangeSuccess', function(event, next, current) {
+      $scope.parameters.closeNav();
     });
   }]);
 
@@ -75,15 +73,19 @@ troveControllers.controller('CoverCtrl', ['$scope',
   function($scope) {
   }]);
 
+troveControllers.controller('SubcoverCtrl', ['$scope',
+  function($scope) {
+  }]);
+
 troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams', '$filter', 'Page', 'Item', 'Browse',
   function($scope, $location, $routeParams, $filter, Page, Item, Browse) {
     $scope.browseList = Browse.query();
-    $scope.parameters.subcoverContent = $scope.browseList;
     $scope.browseCategory = Browse.get({id: $routeParams.browseId}, function(browseCategory) {
       $scope.browseCategory = browseCategory;
       Page.setTitle('Trove — ' + browseCategory.title);
       Item.query().$promise.then(function(items) {
         $scope.browseItems = $filter('filter')(items, { browse_id: browseCategory._id });
+        $scope.parameters.subcoverContent = $scope.browseList;
       });
     });
     $scope.parameters.coverTitle = 'Browse';
@@ -92,7 +94,10 @@ troveControllers.controller('BrowseCtrl', ['$scope', '$location', '$routeParams'
 troveControllers.controller('SearchCtrl', ['$scope', 'Page', 'Item',
   function($scope, Page, Item) {
     Page.setTitle('Trove — Search');
-    $scope.items = Item.query();
+    Item.query().$promise.then(function(items) {
+      $scope.items = items;
+      $scope.parameters.subcoverContent = 'Type above to search';
+    });
     $scope.minEntryFn = function(items) {
       var s = $scope.searchText;
       if (typeof s === 'undefined') return false;

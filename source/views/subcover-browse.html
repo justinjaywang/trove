@@ -1,0 +1,7 @@
+<div class="offsetContent">
+  <ul class="container container--wide subcover subcover--list" ng-show="!!parameters.subcoverContent">
+    <li class="subcover-item" ng-repeat="browseCategory in parameters.subcoverContent">
+      <a class="subcover-anchor" ng-class="{active: parameters.isActive('/browse/{{browseCategory._id}}')}" href="/browse/{{browseCategory._id}}">{{browseCategory.title}}</a>
+    </li>
+  </ul>
+</div>
