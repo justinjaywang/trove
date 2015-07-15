@@ -1,0 +1,20 @@
+{
+  {
+    "_id": "recommended",
+    "title": "Recommended",
+    "subtitle": "",
+    "cover_image_url": ""
+  },
+  {
+    "_id": "trending",
+    "title": "Trending",
+    "subtitle": "",
+    "cover_image_url": ""
+  },
+  {
+    "_id": "latest",
+    "title": "Latest",
+    "subtitle": "",
+    "cover_image_url": ""
+  }
+}

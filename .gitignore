@@ -20,7 +20,7 @@ _site
 ._*
 Thumbs.db
 
-data
+# data
 # build
 node_modules
 project
